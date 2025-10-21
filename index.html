@@ -226,44 +226,7 @@
             border-bottom: 2px solid rgba(255, 255, 255, 0.1);
         }
         
-        /* Chapter Navigation */
-        .chapter-nav {
-            display: flex;
-            gap: 10px;
-            margin: 20px 0;
-            flex-wrap: wrap;
-            justify-content: center;
-        }
-        
-        .chapter-btn {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--light);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 10px 15px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-size: 0.85rem;
-        }
-        
-        .chapter-btn:hover {
-            background: rgba(255, 255, 255, 0.1);
-        }
-        
-        .chapter-btn.active {
-            background: linear-gradient(135deg, var(--accent), var(--primary));
-            color: white;
-        }
-        
         /* Content Styles */
-        .chapter-content {
-            display: none;
-        }
-        
-        .chapter-content.active {
-            display: block;
-        }
-        
         .content-box {
             background: rgba(255, 255, 255, 0.05);
             border-left: 4px solid var(--accent);
@@ -379,6 +342,17 @@
             margin: 30px 0;
             border: 2px solid var(--success);
         }
+
+        /* Chapter Headers */
+        .chapter-header {
+            font-size: 1.5rem;
+            background: linear-gradient(135deg, var(--accent), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin: 30px 0 15px 0;
+            padding-bottom: 8px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
         
         /* Responsive */
         @media (max-width: 768px) {
@@ -388,10 +362,6 @@
             
             .days-navigation {
                 grid-template-columns: 1fr;
-            }
-            
-            .chapter-nav {
-                flex-direction: column;
             }
             
             .nav-buttons {
@@ -409,8 +379,8 @@
     <div class="tutorial-overlay" id="tutorialOverlay">
         <div class="tutorial-box">
             <h3>🎯 Como Navegar no Ebook</h3>
-            <p><strong>Clique nos botões coloridos</strong> para mudar entre os capítulos</p>
-            <p>Cada dia tem vários capítulos com conceitos e atividades práticas</p>
+            <p>Cada dia tem todo o conteúdo em uma única página</p>
+            <p>Use os botões de navegação para ir entre os dias</p>
             <p>Seu progresso é salvo automaticamente!</p>
             <button onclick="closeTutorial()" style="background: var(--secondary); color: white; border: none; padding: 10px 20px; border-radius: 5px; margin-top: 15px; cursor: pointer;">
                 Entendi, vamos começar!
@@ -508,353 +478,326 @@
                 <div class="progress-bar" id="day1-progress"></div>
             </div>
 
-            <div class="chapter-nav">
-                <button class="chapter-btn active" onclick="showChapter('day1', 'chapter1')">Mentalidade</button>
-                <button class="chapter-btn" onclick="showChapter('day1', 'chapter2')">Escolha do Nicho</button>
-                <button class="chapter-btn" onclick="showChapter('day1', 'chapter3')">Perfil TikTok</button>
-                <button class="chapter-btn" onclick="showChapter('day1', 'chapter4')">Algoritmo</button>
-                <button class="chapter-btn" onclick="showChapter('day1', 'chapter5')">Primeiros Vídeos</button>
-                <button class="chapter-btn" onclick="showChapter('day1', 'chapter6')">Kiwify</button>
-                <button class="chapter-btn" onclick="showChapter('day1', 'chapter7')">Planejamento</button>
-                <button class="chapter-btn" onclick="showChapter('day1', 'chapter8')">Potencial</button>
+            <!-- CAPÍTULO 1 -->
+            <h3 class="chapter-header">CAPÍTULO 1: A MENTALIDADE DO DINHEIRO DIGITAL</h3>
+            
+            <div class="concept-box">
+                <h4>💡 Conceito-Chave: Atenção é a Nova Moeda</h4>
+                <p>Um rico entende que o dinheiro não vem do seu tempo, mas do valor que você entrega para muitas pessoas. Antes, você trocava 8 horas de trabalho por um salário. Agora, você cria um vídeo de 30 segundos (valor) que pode ser visto por 100.000 pessoas (atenção). Se apenas 1% delas comprar um produto seu de R$ 50, você fez R$ 50.000. É matemática, não sorte.</p>
             </div>
 
-            <!-- CAPÍTULO 1 -->
-            <div id="day1-chapter1" class="chapter-content active">
-                <h3>CAPÍTULO 1: A MENTALIDADE DO DINHEIRO DIGITAL</h3>
-                
-                <div class="concept-box">
-                    <h4>💡 Conceito-Chave: Atenção é a Nova Moeda</h4>
-                    <p>Um rico entende que o dinheiro não vem do seu tempo, mas do valor que você entrega para muitas pessoas. Antes, você trocava 8 horas de trabalho por um salário. Agora, você cria um vídeo de 30 segundos (valor) que pode ser visto por 100.000 pessoas (atenção). Se apenas 1% delas comprar um produto seu de R$ 50, você fez R$ 50.000. É matemática, não sorte.</p>
-                </div>
+            <div class="content-box">
+                <h4>O Fluxo do Dinheiro na Internet (Simples):</h4>
+                <ol>
+                    <li><strong>ATENÇÃO:</strong> Você cria um vídeo útil/divertido no TikTok → Pessoas te assistem.</li>
+                    <li><strong>INTERESSE:</strong> No seu perfil, tem um link para uma solução (um produto) → Pessoas clicam.</li>
+                    <li><strong>CONVERSÃO:</strong> A pessoa compra o produto pela Kiwify → Dinheiro cai na sua conta automaticamente, 24h por dia.</li>
+                </ol>
+            </div>
 
-                <div class="content-box">
-                    <h4>O Fluxo do Dinheiro na Internet (Simples):</h4>
-                    <ol>
-                        <li><strong>ATENÇÃO:</strong> Você cria um vídeo útil/divertido no TikTok → Pessoas te assistem.</li>
-                        <li><strong>INTERESSE:</strong> No seu perfil, tem um link para uma solução (um produto) → Pessoas clicam.</li>
-                        <li><strong>CONVERSÃO:</strong> A pessoa compra o produto pela Kiwify → Dinheiro cai na sua conta automaticamente, 24h por dia.</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>Exemplo Real (História de Sucesso):</h4>
+                <p>João, 17 anos, gostava de editar vídeos no celular. Em vez de só postar clipes, ele começou a fazer vídeos curtos ensinando "Efeitos do CapCut que ninguém te ensina". Em 1 mês, um vídeo viralizou. Ele criou um PDF simples (um "Mini-Guia dos Efeitos Secretos") por R$ 27. Vendeu 400 cópias em 3 semanas. <strong>R$ 27 x 400 = R$ 10.800,00.</strong> Tudo com celular e vontade.</p>
+            </div>
 
-                <div class="content-box">
-                    <h4>Exemplo Real (História de Sucesso):</h4>
-                    <p>João, 17 anos, gostava de editar vídeos no celular. Em vez de só postar clipes, ele começou a fazer vídeos curtos ensinando "Efeitos do CapCut que ninguém te ensina". Em 1 mês, um vídeo viralizou. Ele criou um PDF simples (um "Mini-Guia dos Efeitos Secretos") por R$ 27. Vendeu 400 cópias em 3 semanas. <strong>R$ 27 x 400 = R$ 10.800,00.</strong> Tudo com celular e vontade.</p>
-                </div>
-
-                <div class="content-box">
-                    <h4>20 Princípios que Todo Milionário Digital Entende:</h4>
-                    <div class="principle-grid">
-                        <div class="principle-card">1. Foco na Atenção: Likes são legais, mas visualizações e seguidores são o que importam.</div>
-                        <div class="principle-card">2. Viralizar é Estratégia: Não é sorte; é usar ganchos, os 3 primeiros segundos e tendências.</div>
-                        <div class="principle-card">3. Eduque, Não Venda: Conteúdo que ensina cria confiança. Vendas vêm depois.</div>
-                        <div class="principle-card">4. Teste Tudo: Ninguém acerta de primeira. Teste ideias, títulos, horários.</div>
-                        <div class="principle-card">5. Consistência é Poder: 1 vídeo por dia é melhor que 7 em um dia e sumir.</div>
-                        <div class="principle-card">6. Nicho = Mina de Ouro: Falar sobre "tudo" é falar com "ninguém". Especialize-se.</div>
-                        <div class="principle-card">7. Produtos Digitais são Máquinas de Dinheiro: E-book, curso, PDF – custo de produção zero, venda infinita.</div>
-                        <div class="principle-card">8. Funis Simples Funcionam: Não complique. Vídeo → Link Bio → Página de Vendas → Compra.</div>
-                        <div class="principle-card">9. Micro-Resultados Importam: Sua primeira venda de R$ 27 é mais importante que o primeiro milhão.</div>
-                        <div class="principle-card">10. Automatize Cedo: Use IA para criar mais em menos tempo.</div>
-                        <div class="principle-card">11. Feito é Melhor que Perfeito: Vídeo postado com pequenos erros é melhor que vídeo perfeito que nunca saiu.</div>
-                        <div class="principle-card">12. Seja a Solução: Seu conteúdo deve resolver um problema ou aliviar uma dor.</div>
-                        <div class="principle-card">13. Vídeos Curtos são Reis: 15 a 30 segundos são ideais para prender a atenção.</div>
-                        <div class="principle-card">14. O Título é Tudo: Ele decide se o vídeo será aberto ou não.</div>
-                        <div class="principle-card">15. Roteiros Curtos Convertem: Saber o que dizer em 20s é uma habilidade valiosa.</div>
-                        <div class="principle-card">16. Cada Vídeo é um Teste: Se um vídeo bombou, entenda o PORQUÊ e repita a fórmula.</div>
-                        <div class="principle-card">17. Reaproveitar é Ser Esperto: Um vídeo grande pode virar 5 pequenos. Um roteiro bom pode ser regravado.</div>
-                        <div class="principle-card">18. Persuasão é Habilidade: Aprenda a usar palavras que despertam desejo e urgência.</div>
-                        <div class="principle-card">19. Reinvista os Lucros: Pegue o dinheiro das primeiras vendas e pague anúncios para crescer mais rápido.</div>
-                        <div class="principle-card">20. Disciplina é o Maior Atalho: Motivação acaba. A disciplina de fazer todo dia é o que te faz rico.</div>
-                    </div>
+            <div class="content-box">
+                <h4>20 Princípios que Todo Milionário Digital Entende:</h4>
+                <div class="principle-grid">
+                    <div class="principle-card">1. Foco na Atenção: Likes são legais, mas visualizações e seguidores são o que importam.</div>
+                    <div class="principle-card">2. Viralizar é Estratégia: Não é sorte; é usar ganchos, os 3 primeiros segundos e tendências.</div>
+                    <div class="principle-card">3. Eduque, Não Venda: Conteúdo que ensina cria confiança. Vendas vêm depois.</div>
+                    <div class="principle-card">4. Teste Tudo: Ninguém acerta de primeira. Teste ideias, títulos, horários.</div>
+                    <div class="principle-card">5. Consistência é Poder: 1 vídeo por dia é melhor que 7 em um dia e sumir.</div>
+                    <div class="principle-card">6. Nicho = Mina de Ouro: Falar sobre "tudo" é falar com "ninguém". Especialize-se.</div>
+                    <div class="principle-card">7. Produtos Digitais são Máquinas de Dinheiro: E-book, curso, PDF – custo de produção zero, venda infinita.</div>
+                    <div class="principle-card">8. Funis Simples Funcionam: Não complique. Vídeo → Link Bio → Página de Vendas → Compra.</div>
+                    <div class="principle-card">9. Micro-Resultados Importam: Sua primeira venda de R$ 27 é mais importante que o primeiro milhão.</div>
+                    <div class="principle-card">10. Automatize Cedo: Use IA para criar mais em menos tempo.</div>
+                    <div class="principle-card">11. Feito é Melhor que Perfeito: Vídeo postado com pequenos erros é melhor que vídeo perfeito que nunca saiu.</div>
+                    <div class="principle-card">12. Seja a Solução: Seu conteúdo deve resolver um problema ou aliviar uma dor.</div>
+                    <div class="principle-card">13. Vídeos Curtos são Reis: 15 a 30 segundos são ideais para prender a atenção.</div>
+                    <div class="principle-card">14. O Título é Tudo: Ele decide se o vídeo será aberto ou não.</div>
+                    <div class="principle-card">15. Roteiros Curtos Convertem: Saber o que dizer em 20s é uma habilidade valiosa.</div>
+                    <div class="principle-card">16. Cada Vídeo é um Teste: Se um vídeo bombou, entenda o PORQUÊ e repita a fórmula.</div>
+                    <div class="principle-card">17. Reaproveitar é Ser Esperto: Um vídeo grande pode virar 5 pequenos. Um roteiro bom pode ser regravado.</div>
+                    <div class="principle-card">18. Persuasão é Habilidade: Aprenda a usar palavras que despertam desejo e urgência.</div>
+                    <div class="principle-card">19. Reinvista os Lucros: Pegue o dinheiro das primeiras vendas e pague anúncios para crescer mais rápido.</div>
+                    <div class="principle-card">20. Disciplina é o Maior Atalho: Motivação acaba. A disciplina de fazer todo dia é o que te faz rico.</div>
                 </div>
             </div>
 
             <!-- CAPÍTULO 2 -->
-            <div id="day1-chapter2" class="chapter-content">
-                <h3>CAPÍTULO 2: ESCOLHA SEU NICHO – ENCONTRE SUA MINA DE OURO</h3>
-                
-                <div class="content-box">
-                    <h4>O que é um Nicho?</h4>
-                    <p>É um "pedaço" de um mercado grande. Em vez de "saúde", fale sobre "dietas low-carb para mulheres acima de 30". Quanto mais específico, mais fácil de encontrar seu público e se tornar autoridade.</p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 2: ESCOLHA SEU NICHO – ENCONTRE SUA MINA DE OURO</h3>
+            
+            <div class="content-box">
+                <h4>O que é um Nicho?</h4>
+                <p>É um "pedaço" de um mercado grande. Em vez de "saúde", fale sobre "dietas low-carb para mulheres acima de 30". Quanto mais específico, mais fácil de encontrar seu público e se tornar autoridade.</p>
+            </div>
 
-                <div class="concept-box">
-                    <h4>Os 3 Grandes Nichos que Sempre Vendem (O Tripé do Lucro):</h4>
-                    <div class="tool-grid">
-                        <div class="tool-card">
-                            <h4>1. DINHEIRO</h4>
-                            <p>Como ganhar mais, renda extra, investimentos para iniciantes, usar IA para ganhar dinheiro</p>
-                        </div>
-                        <div class="tool-card">
-                            <h4>2. SAÚDE & BELEZA</h4>
-                            <p>Emagrecimento, exercícios em casa, cuidados com a pele, receitas fitness</p>
-                        </div>
-                        <div class="tool-card">
-                            <h4>3. RELACIONAMENTO & MENTE</h4>
-                            <p>Como ser mais confiante, hábitos para o sucesso, controlar a ansiedade, persuasão</p>
-                        </div>
+            <div class="concept-box">
+                <h4>Os 3 Grandes Nichos que Sempre Vendem (O Tripé do Lucro):</h4>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h4>1. DINHEIRO</h4>
+                        <p>Como ganhar mais, renda extra, investimentos para iniciantes, usar IA para ganhar dinheiro</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>2. SAÚDE & BELEZA</h4>
+                        <p>Emagrecimento, exercícios em casa, cuidados com a pele, receitas fitness</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>3. RELACIONAMENTO & MENTE</h4>
+                        <p>Como ser mais confiante, hábitos para o sucesso, controlar a ansiedade, persuasão</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="activity-box">
-                    <h4>ATIVIDADE PRÁTICA 1 – DEFINA SEU NICHO (MÃOS À OBRA!):</h4>
-                    <p>Pegue seu caderno e responda com sinceridade:</p>
-                    <ol>
-                        <li>O que eu gosto de fazer/estudar? (Ex: jogar videogame, malhar, cozinhar, estudar marketing)</li>
-                        <li>Que tipo de conteúdo eu mais consumo no TikTok/Instagram? (Isso mostra seu interesse real)</li>
-                        <li>Que problema eu posso resolver para outras pessoas com base nisso? (Ex: Se joga muito, pode ensinar "dicas para passar de fase" ou "como montar um setup barato")</li>
-                        <li>Eu quero mais ENSINAR, MOTIVAR ou ENTRETENER? (Conteúdo educativo geralmente converte melhor)</li>
-                    </ol>
-                    <p><strong>Agora, escreva no caderno:</strong> "MEU NICHO OFICIAL É: [Ex: Ganhar dinheiro com inteligência artificial para iniciantes]"</p>
-                </div>
+            <div class="activity-box">
+                <h4>ATIVIDADE PRÁTICA 1 – DEFINA SEU NICHO (MÃOS À OBRA!):</h4>
+                <p>Pegue seu caderno e responda com sinceridade:</p>
+                <ol>
+                    <li>O que eu gosto de fazer/estudar? (Ex: jogar videogame, malhar, cozinhar, estudar marketing)</li>
+                    <li>Que tipo de conteúdo eu mais consumo no TikTok/Instagram? (Isso mostra seu interesse real)</li>
+                    <li>Que problema eu posso resolver para outras pessoas com base nisso? (Ex: Se joga muito, pode ensinar "dicas para passar de fase" ou "como montar um setup barato")</li>
+                    <li>Eu quero mais ENSINAR, MOTIVAR ou ENTRETENER? (Conteúdo educativo geralmente converte melhor)</li>
+                </ol>
+                <p><strong>Agora, escreva no caderno:</strong> "MEU NICHO OFICIAL É: [Ex: Ganhar dinheiro com inteligência artificial para iniciantes]"</p>
+            </div>
 
-                <div class="content-box">
-                    <h4>10 Práticas para Validar e Afiar Seu Nicho:</h4>
-                    <ol>
-                        <li>Pesquise no TikTok: Digite "#" e veja o que aparece relacionado ao seu nicho. Quantas views têm os vídeos?</li>
-                        <li>Analise os Concorrentes: Encontre 3 criadores de sucesso no seu nicho. O que eles fazem? Como é a bio deles?</li>
-                        <li>Liste 5 Dores do Público: No nicho de dinheiro com IA, as dores são: "não sei por onde começar", "acho que é muito complicado", "não tenho dinheiro para investir"</li>
-                        <li>Identifique Soluções Simples: Que produto digital (PDF, vídeo-aula) resolveria essas dores?</li>
-                        <li>Crie Mini-Histórias: Pense em 3 stories pessoais que se relacionam com o nicho. "Como eu perdi 10kg..." ou "Como fiz R$ 500,00 em uma semana..."</li>
-                        <li>Escolha Sub-Temas: Para o nicho principal, tenha 3-4 subtemas. Ex: Nicho "IA". Sub-temas: "Ferramentas de IA", "Prompts para ChatGPT", "Automação com IA"</li>
-                        <li>Teste o Engajamento: Faça 2 ou 3 vídeos gratuitos sobre um sub-tema. Veja a reação das pessoas</li>
-                        <li>Defina o Tom de Voz: Você será mais motivacional? Direto e técnico? Descontraído?</li>
-                        <li>Planeje 5 Ideias de Vídeo AGORA: Anote 5 ideias baseadas na sua pesquisa</li>
-                        <li>Crie uma Pasta de Insights: No celular, salve prints, anotações e ideias que encontrar</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>10 Práticas para Validar e Afiar Seu Nicho:</h4>
+                <ol>
+                    <li>Pesquise no TikTok: Digite "#" e veja o que aparece relacionado ao seu nicho. Quantas views têm os vídeos?</li>
+                    <li>Analise os Concorrentes: Encontre 3 criadores de sucesso no seu nicho. O que eles fazem? Como é a bio deles?</li>
+                    <li>Liste 5 Dores do Público: No nicho de dinheiro com IA, as dores são: "não sei por onde começar", "acho que é muito complicado", "não tenho dinheiro para investir"</li>
+                    <li>Identifique Soluções Simples: Que produto digital (PDF, vídeo-aula) resolveria essas dores?</li>
+                    <li>Crie Mini-Histórias: Pense em 3 stories pessoais que se relacionam com o nicho. "Como eu perdi 10kg..." ou "Como fiz R$ 500,00 em uma semana..."</li>
+                    <li>Escolha Sub-Temas: Para o nicho principal, tenha 3-4 subtemas. Ex: Nicho "IA". Sub-temas: "Ferramentas de IA", "Prompts para ChatGPT", "Automação com IA"</li>
+                    <li>Teste o Engajamento: Faça 2 ou 3 vídeos gratuitos sobre um sub-tema. Veja a reação das pessoas</li>
+                    <li>Defina o Tom de Voz: Você será mais motivacional? Direto e técnico? Descontraído?</li>
+                    <li>Planeje 5 Ideias de Vídeo AGORA: Anote 5 ideias baseadas na sua pesquisa</li>
+                    <li>Crie uma Pasta de Insights: No celular, salve prints, anotações e ideias que encontrar</li>
+                </ol>
             </div>
 
             <!-- CAPÍTULO 3 -->
-            <div id="day1-chapter3" class="chapter-content">
-                <h3>CAPÍTULO 3: SEU PERFIL NO TIKTOK – SUA VITRINE DIGITAL</h3>
-                
-                <div class="content-box">
-                    <p><strong>Seu perfil é sua loja. Se estiver feia e confusa, ninguém compra.</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 3: SEU PERFIL NO TIKTOK – SUA VITRINE DIGITAL</h3>
+            
+            <div class="content-box">
+                <p><strong>Seu perfil é sua loja. Se estiver feia e confusa, ninguém compra.</strong></p>
+            </div>
 
-                <div class="content-box">
-                    <h4>Passo a Passo para um Perfil Impecável:</h4>
-                    <ol>
-                        <li><strong>Crie uma Conta NOVA:</strong> Não use a conta pessoal. Comece do zero, profissional</li>
-                        <li><strong>Nome ("Nome de Guerra"):</strong> Curto, fácil de lembrar e ligado ao nicho. Ex: "Mundo_IA", "EmagrecerFacil", "InvestidorJovem"</li>
-                        <li><strong>Foto de Perfil:</strong> Nítida, com o rosto visível (gera confiança). Pode usar apps como Canva ou gerar uma imagem profissional com IA (DALL-E, Midjourney)</li>
-                        <li><strong>Bio (Sua Mensagem de Vendas):</strong> Deve ser clara e direta.
-                            <ul>
-                                <li>Fórmula: [O que você faz] + [Para quem] + [Benefício/Resultado]</li>
-                                <li>Exemplo: "Ensino como usar IA para ganhar dinheiro online | Do ZERO | Acesse o link e veja o método 👇"</li>
-                            </ul>
-                        </li>
-                        <li><strong>Link na Bio:</strong> Deixe preparado para colocar o link da Kiwify amanhã. Por enquanto, pode colocar um link do Instagram ou um link simples</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>Passo a Passo para um Perfil Impecável:</h4>
+                <ol>
+                    <li><strong>Crie uma Conta NOVA:</strong> Não use a conta pessoal. Comece do zero, profissional</li>
+                    <li><strong>Nome ("Nome de Guerra"):</strong> Curto, fácil de lembrar e ligado ao nicho. Ex: "Mundo_IA", "EmagrecerFacil", "InvestidorJovem"</li>
+                    <li><strong>Foto de Perfil:</strong> Nítida, com o rosto visível (gera confiança). Pode usar apps como Canva ou gerar uma imagem profissional com IA (DALL-E, Midjourney)</li>
+                    <li><strong>Bio (Sua Mensagem de Vendas):</strong> Deve ser clara e direta.
+                        <ul>
+                            <li>Fórmula: [O que você faz] + [Para quem] + [Benefício/Resultado]</li>
+                            <li>Exemplo: "Ensino como usar IA para ganhar dinheiro online | Do ZERO | Acesse o link e veja o método 👇"</li>
+                        </ul>
+                    </li>
+                    <li><strong>Link na Bio:</strong> Deixe preparado para colocar o link da Kiwify amanhã. Por enquanto, pode colocar um link do Instagram ou um link simples</li>
+                </ol>
+            </div>
 
-                <div class="activity-box">
-                    <h4>10 Práticas para um Perfil que Converte:</h4>
-                    <ol>
-                        <li>Nome "Grudável": As pessoas precisam lembrar fácil</li>
-                        <li>Foto com Olhar Confiante: Sorria! Passe credibilidade</li>
-                        <li>Bio com Emojis e Chamada Clara: Use emojis (👉, 🚀, 💰) e seja específico</li>
-                        <li>Link Único e Otimizado: Use um serviço como "Link-in.bio" ou a própria função do TikTok</li>
-                        <li>Destaques (Stories Fixados): Organize por temas: "Dicas", "Depoimentos", "Sobre Mim"</li>
-                        <li>Consistência Visual: Use as mesmas cores e fontes nos vídeos (usando CapCut)</li>
-                        <li>Fuja do Genérico: "Pessoa feliz" não funciona. Seja "Especialista em X"</li>
-                        <li>Atualize a Bio: Conforme você cresce, mude a bio para refletir novas ofertas</li>
-                        <li>Integração: Coloque seu @ do TikTok no Instagram e YouTube</li>
-                        <li>Monitore: Veja no Analytics do TikTok de onde vêm seus seguidores</li>
-                    </ol>
-                </div>
+            <div class="activity-box">
+                <h4>10 Práticas para um Perfil que Converte:</h4>
+                <ol>
+                    <li>Nome "Grudável": As pessoas precisam lembrar fácil</li>
+                    <li>Foto com Olhar Confiante: Sorria! Passe credibilidade</li>
+                    <li>Bio com Emojis e Chamada Clara: Use emojis (👉, 🚀, 💰) e seja específico</li>
+                    <li>Link Único e Otimizado: Use um serviço como "Link-in.bio" ou a própria função do TikTok</li>
+                    <li>Destaques (Stories Fixados): Organize por temas: "Dicas", "Depoimentos", "Sobre Mim"</li>
+                    <li>Consistência Visual: Use as mesmas cores e fontes nos vídeos (usando CapCut)</li>
+                    <li>Fuja do Genérico: "Pessoa feliz" não funciona. Seja "Especialista em X"</li>
+                    <li>Atualize a Bio: Conforme você cresce, mude a bio para refletir novas ofertas</li>
+                    <li>Integração: Coloque seu @ do TikTok no Instagram e YouTube</li>
+                    <li>Monitore: Veja no Analytics do TikTok de onde vêm seus seguidores</li>
+                </ol>
             </div>
 
             <!-- CAPÍTULO 4 -->
-            <div id="day1-chapter4" class="chapter-content">
-                <h3>CAPÍTULO 4: ENTENDENDO O ALGORITMO – FAÇA O TIKTOK TRABALHAR PARA VOCÊ</h3>
-                
-                <div class="content-box">
-                    <p><strong>O algoritmo não é um monstro. É um garçom.</strong> Ele serve conteúdo para as pessoas. Se o povo gosta do que você serve (retenção, engajamento), o garçom te dá mais clientes (visibilidade).</p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 4: ENTENDENDO O ALGORITMO – FAÇA O TIKTOK TRABALHAR PARA VOCÊ</h3>
+            
+            <div class="content-box">
+                <p><strong>O algoritmo não é um monstro. É um garçom.</strong> Ele serve conteúdo para as pessoas. Se o povo gosta do que você serve (retenção, engajamento), o garçom te dá mais clientes (visibilidade).</p>
+            </div>
 
-                <div class="content-box">
-                    <h4>Como um Vídeo Vira Viral:</h4>
-                    <ol>
-                        <li><strong>Postagem:</strong> Seu vídeo é mostrado para ~500 seguidores (ou não seguidores)</li>
-                        <li><strong>Teste de Retenção:</strong> O algoritmo vê se as pessoas assistem até o final. Os primeiros 3 segundos são cruciais!</li>
-                        <li><strong>Engajamento:</strong> Se as pessoas curtem, comentam, compartilham e salvam, o algoritmo entende que é um bom conteúdo</li>
-                        <li><strong>Escala:</strong> O vídeo é então mostrado para 5.000, 50.000, 500.000 pessoas</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>Como um Vídeo Vira Viral:</h4>
+                <ol>
+                    <li><strong>Postagem:</strong> Seu vídeo é show para ~500 seguidores (ou não seguidores)</li>
+                    <li><strong>Teste de Retenção:</strong> O algoritmo vê se as pessoas assistem até o final. Os primeiros 3 segundos são cruciais!</li>
+                    <li><strong>Engajamento:</strong> Se as pessoas curtem, comentam, compartilham e salvam, o algoritmo entende que é um bom conteúdo</li>
+                    <li><strong>Escala:</strong> O vídeo é então mostrado para 5.000, 50.000, 500.000 pessoas</li>
+                </ol>
+            </div>
 
-                <div class="concept-box">
-                    <h4>Exemplo de Gancho (Primeiros Segundos):</h4>
-                    <p>· <strong>Ruim:</strong> "Oi, pessoal, hoje vou falar sobre..."</p>
-                    <p>· <strong>BOM (COM GANCHO):</strong> "Pare tudo que você está fazendo! Se você não sabe isso, está perdendo dinheiro todo dia..."</p>
-                </div>
+            <div class="concept-box">
+                <h4>Exemplo de Gancho (Primeiros Segundos):</h4>
+                <p>· <strong>Ruim:</strong> "Oi, pessoal, hoje vou falar sobre..."</p>
+                <p>· <strong>BOM (COM GANCHO):</strong> "Pare tudo que você está fazendo! Se você não sabe isso, está perdendo dinheiro todo dia..."</p>
+            </div>
 
-                <div class="content-box">
-                    <h4>10 Conceitos para Dominar o Algoritmo:</h4>
-                    <ol>
-                        <li><strong>Retenção é Rei:</strong> Vídeos curtos (15-30s) têm taxa de conclusão maior</li>
-                        <li><strong>Engajamento Inicial:</strong> As interações nas primeiras horas ditam o sucesso</li>
-                        <li><strong>Curtidas São o Básico:</strong> Mostram que o conteúdo é agradável</li>
-                        <li><strong>Comentários São Ouro:</strong> Crie perguntas no vídeo para incentivar comentários</li>
-                        <li><strong>Compartilhamentos São a Chave:</strong> Conteúdo muito útil ou engraçado é compartilhado</li>
-                        <li><strong>Salvamentos São Poderosos:</strong> Pessoas salvam para ver depois (ótimo sinal)</li>
-                        <li><strong>Texto na Tela:</strong> Ajuda a prender quem está sem som</li>
-                        <li><strong>Primeira Frase Impactante:</strong> Gera curiosidade imediata</li>
-                        <li><strong>Conteúdo "Como Fazer":</strong> Tutoriais e guias rápidos têm alta retenção</li>
-                        <li><strong>Publicar Na Hora Certa:</strong> Teste postar entre 12h-14h e 18h-21h (horário de pico do Brasil)</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>10 Conceitos para Dominar o Algoritmo:</h4>
+                <ol>
+                    <li><strong>Retenção é Rei:</strong> Vídeos curtos (15-30s) têm taxa de conclusão maior</li>
+                    <li><strong>Engajamento Inicial:</strong> As interações nas primeiras horas ditam o sucesso</li>
+                    <li><strong>Curtidas São o Básico:</strong> Mostram que o conteúdo é agradável</li>
+                    <li><strong>Comentários São Ouro:</strong> Crie perguntas no vídeo para incentivar comentários</li>
+                    <li><strong>Compartilhamentos São a Chave:</strong> Conteúdo muito útil ou engraçado é compartilhado</li>
+                    <li><strong>Salvamentos São Poderosos:</strong> Pessoas salvam para ver depois (ótimo sinal)</li>
+                    <li><strong>Texto na Tela:</strong> Ajuda a prender quem está sem som</li>
+                    <li><strong>Primeira Frase Impactante:</strong> Gera curiosidade imediata</li>
+                    <li><strong>Conteúdo "Como Fazer":</strong> Tutoriais e guias rápidos têm alta retenção</li>
+                    <li><strong>Publicar Na Hora Certa:</strong> Teste postar entre 12h-14h e 18h-21h (horário de pico do Brasil)</li>
+                </ol>
             </div>
 
             <!-- CAPÍTULO 5 -->
-            <div id="day1-chapter5" class="chapter-content">
-                <h3>CAPÍTULO 5: SEUS PRIMEIROS 3 VÍDEOS – O PRIMEIRO PASSO É O MAIS IMPORTANTE</h3>
+            <h3 class="chapter-header">CAPÍTULO 5: SEUS PRIMEIROS 3 VÍDEOS – O PRIMEIRO PASSO É O MAIS IMPORTANTE</h3>
+            
+            <div class="content-box">
+                <p><strong>Não espere estar "pronto". A perfeição é a inimiga do progresso.</strong></p>
+            </div>
+
+            <div class="content-box">
+                <h4>Passo a Passo dos Primeiros Vídeos:</h4>
                 
-                <div class="content-box">
-                    <p><strong>Não espere estar "pronto". A perfeição é a inimiga do progresso.</strong></p>
+                <p><strong>Passo 1 – Gere Ideias com IA:</strong></p>
+                <p>Abra o ChatGPT e digite:</p>
+                <div class="concept-box">
+                    <p>"Me dê 10 ideias para vídeos de 20 segundos no TikTok sobre [SEU NICHO AQUI]. As ideias precisam ter um gancho forte nos 3 primeiros segundos."</p>
                 </div>
 
-                <div class="content-box">
-                    <h4>Passo a Passo dos Primeiros Vídeos:</h4>
-                    
-                    <p><strong>Passo 1 – Gere Ideias com IA:</strong></p>
-                    <p>Abra o ChatGPT e digite:</p>
-                    <div class="concept-box">
-                        <p>"Me dê 10 ideias para vídeos de 20 segundos no TikTok sobre [SEU NICHO AQUI]. As ideias precisam ter um gancho forte nos 3 primeiros segundos."</p>
-                    </div>
-
-                    <p><strong>Passo 2 – Escreva Roteiros Curtos:</strong></p>
-                    <p>Escolha 3 ideias. Para cada uma, peça ao ChatGPT:</p>
-                    <div class="concept-box">
-                        <p>"Escreva um roteiro de 20 segundos para um vídeo do TikTok sobre [IDEA ESCOLHIDA]. Use linguagem motivacional, direta e inclua uma chamada para ação (como 'me segue para mais dicas')."</p>
-                    </div>
-
-                    <p><strong>Passo 3 – Grave e Edite (SIMPLES):</strong></p>
-                    <ul>
-                        <li><strong>Gravação:</strong> Celular na vertical, com a melhor luz que tiver (luz natural da janela é ótima). Fale com energia!</li>
-                        <li><strong>Edição (CapCut):</strong>
-                            <ol>
-                                <li>Abra o CapCut</li>
-                                <li>Importe seu vídeo</li>
-                                <li>Corte as partes ruins</li>
-                                <li>Adicione legendas automáticas (é essencial!)</li>
-                                <li>Coloque uma música de fundo da biblioteca do TikTok (em volume baixo)</li>
-                                <li>Use um template de transição se quiser (opcional)</li>
-                            </ol>
-                        </li>
-                        <li><strong>Opção com IA:</strong> Use a função "Texto para Voz" do CapCut para narrar o roteiro, se não quiser aparecer</li>
-                    </ul>
-
-                    <p><strong>Passo 4 – Publique com Estratégia:</strong></p>
-                    <ul>
-                        <li>Poste os 3 vídeos com intervalo de 2-3 horas</li>
-                        <li>Escreva uma legenda com pergunta</li>
-                        <li>Use 3-5 hashtags relevantes (ex: #iainteligenciaartificial #ganhardinheiro #dicadetiktok)</li>
-                    </ul>
+                <p><strong>Passo 2 – Escreva Roteiros Curtos:</strong></p>
+                <p>Escolha 3 ideias. Para cada uma, peça ao ChatGPT:</p>
+                <div class="concept-box">
+                    <p>"Escreva um roteiro de 20 segundos para um vídeo do TikTok sobre [IDEA ESCOLHIDA]. Use linguagem motivacional, direta e inclua uma chamada para ação (como 'me segue para mais dicas')."</p>
                 </div>
 
-                <div class="activity-box">
-                    <h4>ATIVIDADE PRÁTICA 2 – ANALISE SEUS RESULTADOS:</h4>
-                    <p>2 horas após cada postagem, veja o TikTok Analytics (disponível em contas profissionais):</p>
-                    <ul>
-                        <li>Qual vídeo teve mais retenção (pessoas assistindo até o final)?</li>
-                        <li>Qual teve mais visualizações?</li>
-                    </ul>
-                    <p><strong>Anote no caderno:</strong> "O vídeo sobre [TEMA] performou melhor porque [MOTIVO]."</p>
-                </div>
+                <p><strong>Passo 3 – Grave e Edite (SIMPLES):</strong></p>
+                <ul>
+                    <li><strong>Gravação:</strong> Celular na vertical, com a melhor luz que tiver (luz natural da janela é ótima). Fale com energia!</li>
+                    <li><strong>Edição (CapCut):</strong>
+                        <ol>
+                            <li>Abra o CapCut</li>
+                            <li>Importe seu vídeo</li>
+                            <li>Corte as partes ruins</li>
+                            <li>Adicione legendas automáticas (é essencial!)</li>
+                            <li>Coloque uma música de fundo da biblioteca do TikTok (em volume baixo)</li>
+                            <li>Use um template de transição se quiser (opcional)</li>
+                        </ol>
+                    </li>
+                    <li><strong>Opção com IA:</strong> Use a função "Texto para Voz" do CapCut para narrar o roteiro, se não quiser aparecer</li>
+                </ul>
+
+                <p><strong>Passo 4 – Publique com Estratégia:</strong></p>
+                <ul>
+                    <li>Poste os 3 vídeos com intervalo de 2-3 horas</li>
+                    <li>Escreva uma legenda com pergunta</li>
+                    <li>Use 3-5 hashtags relevantes (ex: #iainteligenciaartificial #ganhardinheiro #dicadetiktok)</li>
+                </ul>
+            </div>
+
+            <div class="activity-box">
+                <h4>ATIVIDADE PRÁTICA 2 – ANALISE SEUS RESULTADOS:</h4>
+                <p>2 horas após cada postagem, veja o TikTok Analytics (disponível em contas profissionais):</p>
+                <ul>
+                    <li>Qual vídeo teve mais retenção (pessoas assistindo até o final)?</li>
+                    <li>Qual teve mais visualizações?</li>
+                </ul>
+                <p><strong>Anote no caderno:</strong> "O vídeo sobre [TEMA] performou melhor porque [MOTIVO]."</p>
             </div>
 
             <!-- CAPÍTULO 6 -->
-            <div id="day1-chapter6" class="chapter-content">
-                <h3>CAPÍTULO 6: INTRODUÇÃO À KIWIFY – SUA CAIXA REGISTRADORA AUTOMÁTICA</h3>
-                
-                <div class="content-box">
-                    <p>A Kiwify é uma plataforma brasileira que permite vender produtos digitais (e-books, cursos, PDFs, assinaturas) e produtos físicos. Ela cuida de tudo: pagamento com cartão, boleto, PIX, entrega do produto, suporte ao cliente e proteção contra chargeback.</p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 6: INTRODUÇÃO À KIWIFY – SUA CAIXA REGISTRADORA AUTOMÁTICA</h3>
+            
+            <div class="content-box">
+                <p>A Kiwify é uma plataforma brasileira que permite vender produtos digitais (e-books, cursos, PDFs, assinaturas) e produtos físicos. Ela cuida de tudo: pagamento com cartão, boleto, PIX, entrega do produto, suporte ao cliente e proteção contra chargeback.</p>
+            </div>
 
-                <div class="content-box">
-                    <h4>Duas Formas de Ganhar na Kiwify:</h4>
-                    <div class="tool-grid">
-                        <div class="tool-card">
-                            <h4>1. Criador</h4>
-                            <p>Você cria seu próprio produto e vende</p>
-                        </div>
-                        <div class="tool-card">
-                            <h4>2. Afiliado</h4>
-                            <p>Você vende produtos de outras pessoas e ganha uma comissão (às vezes acima de 80%)</p>
-                        </div>
+            <div class="content-box">
+                <h4>Duas Formas de Ganhar na Kiwify:</h4>
+                <div class="tool-grid">
+                    <div class="tool-card">
+                        <h4>1. Criador</h4>
+                        <p>Você cria seu próprio produto e vende</p>
+                    </div>
+                    <div class="tool-card">
+                        <h4>2. Afiliado</h4>
+                        <p>Você vende produtos de outras pessoas e ganha uma comissão (às vezes acima de 80%)</p>
                     </div>
                 </div>
+            </div>
 
-                <div class="activity-box">
-                    <h4>ATIVIDADE PRÁTICA 3 – CRIE SUA CONTA NA KIWIFY:</h4>
-                    <ol>
-                        <li>Acesse o site da Kiwify</li>
-                        <li>Crie uma conta gratuita</li>
-                        <li>Explore o Marketplace: É um shopping de produtos digitais que você pode vender como afiliado</li>
-                        <li><strong>Missão:</strong> Encontre 1 produto no Marketplace que combine com seu nicho. Anote o preço e a comissão.
-                            <ul>
-                                <li>Exemplo: Você tem nicho de IA. Procure por "Curso de ChatGPT". Acha um produto de R$ 97,00 com comissão de 50%. Você ganha R$ 48,50 por venda.</li>
-                            </ul>
-                        </li>
-                    </ol>
-                </div>
+            <div class="activity-box">
+                <h4>ATIVIDADE PRÁTICA 3 – CRIE SUA CONTA NA KIWIFY:</h4>
+                <ol>
+                    <li>Acesse o site da Kiwify</li>
+                    <li>Crie uma conta gratuita</li>
+                    <li>Explore o Marketplace: É um shopping de produtos digitais que você pode vender como afiliado</li>
+                    <li><strong>Missão:</strong> Encontre 1 produto no Marketplace que combine com seu nicho. Anote o preço e a comissão.
+                        <ul>
+                            <li>Exemplo: Você tem nicho de IA. Procure por "Curso de ChatGPT". Acha um produto de R$ 97,00 com comissão de 50%. Você ganha R$ 48,50 por venda.</li>
+                        </ul>
+                    </li>
+                </ol>
             </div>
 
             <!-- CAPÍTULO 7 -->
-            <div id="day1-chapter7" class="chapter-content">
-                <h3>CAPÍTULO 7: PLANEJAMENTO DIÁRIO – A ROTINA DO VENCEDOR</h3>
-                
-                <div class="content-box">
-                    <p><strong>A disciplina separa o amador do profissional.</strong> Segue um modelo para os próximos 30 dias:</p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 7: PLANEJAMENTO DIÁRIO – A ROTINA DO VENCEDOR</h3>
+            
+            <div class="content-box">
+                <p><strong>A disciplina separa o amador do profissional.</strong> Segue um modelo para os próximos 30 dias:</p>
+            </div>
 
-                <div class="concept-box">
-                    <h4>📅 Rotina Diária do Milionário Digital:</h4>
-                    <ul>
-                        <li><strong>08:00 - 08:30:</strong> Acordar, planejar o dia. Gerar 5 ideias de vídeo com o ChatGPT</li>
-                        <li><strong>09:00 - 11:00:</strong> Bloco de Criação: Gravar e editar os vídeos do dia (usando CapCut)</li>
-                        <li><strong>12:00 - 18:00:</strong> Bloco de Publicação: Postar 3 vídeos (um às 12h, outro às 15h, outro às 18h)</li>
-                        <li><strong>20:00 - 20:30:</strong> Análise: Verificar o Analytics do TikTok, ver cliques no link da Kiwify</li>
-                        <li><strong>21:00 - 21:15:</strong> Aprendizado: Anotar no caderno o que funcionou e o que não funcionou</li>
-                    </ul>
-                </div>
+            <div class="concept-box">
+                <h4>📅 Rotina Diária do Milionário Digital:</h4>
+                <ul>
+                    <li><strong>08:00 - 08:30:</strong> Acordar, planejar o dia. Gerar 5 ideias de vídeo com o ChatGPT</li>
+                    <li><strong>09:00 - 11:00:</strong> Bloco de Criação: Gravar e editar os vídeos do dia (usando CapCut)</li>
+                    <li><strong>12:00 - 18:00:</strong> Bloco de Publicação: Postar 3 vídeos (um às 12h, outro às 15h, outro às 18h)</li>
+                    <li><strong>20:00 - 20:30:</strong> Análise: Verificar o Analytics do TikTok, ver cliques no link da Kiwify</li>
+                    <li><strong>21:00 - 21:15:</strong> Aprendizado: Anotar no caderno o que funcionou e o que não funcionou</li>
+                </ul>
             </div>
 
             <!-- CAPÍTULO 8 -->
-            <div id="day1-chapter8" class="chapter-content">
-                <h3>CAPÍTULO 8: VISUALIZANDO O POTENCIAL – ISSO É REAL</h3>
-                
-                <div class="content-box">
-                    <p>Vamos fazer uma projeção conservadora para você acreditar:</p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 8: VISUALIZANDO O POTENCIAL – ISSO É REAL</h3>
+            
+            <div class="content-box">
+                <p>Vamos fazer uma projeção conservadora para você acreditar:</p>
+            </div>
 
-                <div class="concept-box">
-                    <h4>💰 Projeção de Lucro em 30 Dias:</h4>
-                    <ul>
-                        <li><strong>Meta:</strong> 90 vídeos em 30 dias (3 por dia)</li>
-                        <li><strong>Resultado:</strong> 10 desses vídeos "vingam", com média de 50.000 views cada. Total: 500.000 views</li>
-                        <li><strong>Cliques no Link:</strong> 1% das pessoas que veem seu perfil clicam no link. 500.000 views → ~5.000 cliques</li>
-                        <li><strong>Vendas:</strong> 2% dos que clicam compram um produto de R$ 47,00</li>
-                        <li><strong>Cálculo:</strong> 5.000 cliques * 2% = 100 vendas</li>
-                        <li><strong>Lucro:</strong> 100 vendas * R$ 47,00 = <strong>R$ 4.700,00 em um mês</strong></li>
-                    </ul>
-                </div>
+            <div class="concept-box">
+                <h4>💰 Projeção de Lucro em 30 Dias:</h4>
+                <ul>
+                    <li><strong>Meta:</strong> 90 vídeos em 30 dias (3 por dia)</li>
+                    <li><strong>Resultado:</strong> 10 desses vídeos "vingam", com média de 50.000 views cada. Total: 500.000 views</li>
+                    <li><strong>Cliques no Link:</strong> 1% das pessoas que veem seu perfil clicam no link. 500.000 views → ~5.000 cliques</li>
+                    <li><strong>Vendas:</strong> 2% dos que clicam compram um produto de R$ 47,00</li>
+                    <li><strong>Cálculo:</strong> 5.000 cliques * 2% = 100 vendas</li>
+                    <li><strong>Lucro:</strong> 100 vendas * R$ 47,00 = <strong>R$ 4.700,00 em um mês</strong></li>
+                </ul>
+            </div>
 
-                <div class="activity-box">
-                    <h4>✅ DIA 1 FINALIZADO!</h4>
-                    <p><strong>Você não é mais um espectador. Você é um criador.</strong> Você tem:</p>
-                    <ul>
-                        <li>Nicho Definido</li>
-                        <li>Perfil TikTok Profissional</li>
-                        <li>3 Vídeos Postados</li>
-                        <li>Conta na Kiwify Criada</li>
-                        <li>Plano de Rotina Diária</li>
-                        <li>Mentalidade de Dono</li>
-                    </ul>
-                    <p><strong>Amanhã, vamos botar fogo nisso!</strong></p>
-                </div>
+            <div class="activity-box">
+                <h4>✅ DIA 1 FINALIZADO!</h4>
+                <p><strong>Você não é mais um espectador. Você é um criador.</strong> Você tem:</p>
+                <ul>
+                    <li>Nicho Definido</li>
+                    <li>Perfil TikTok Profissional</li>
+                    <li>3 Vídeos Postados</li>
+                    <li>Conta na Kiwify Criada</li>
+                    <li>Plano de Rotina Diária</li>
+                    <li>Mentalidade de Dono</li>
+                </ul>
+                <p><strong>Amanhã, vamos botar fogo nisso!</strong></p>
             </div>
 
             <div class="nav-buttons">
@@ -877,230 +820,209 @@
                 <div class="progress-bar" id="day2-progress"></div>
             </div>
 
-            <div class="chapter-nav">
-                <button class="chapter-btn active" onclick="showChapter('day2', 'chapter1')">Mentalidade</button>
-                <button class="chapter-btn" onclick="showChapter('day2', 'chapter2')">Ferramentas</button>
-                <button class="chapter-btn" onclick="showChapter('day2', 'chapter3')">Produção em Escala</button>
-                <button class="chapter-btn" onclick="showChapter('day2', 'chapter4')">Funil Automático</button>
-                <button class="chapter-btn" onclick="showChapter('day2', 'chapter5')">Criação de Produto</button>
-                <button class="chapter-btn" onclick="showChapter('day2', 'chapter6')">Otimização</button>
+            <!-- CAPÍTULO 1 -->
+            <h3 class="chapter-header">CAPÍTULO 1: A MENTALIDADE DO DIA 2</h3>
+            
+            <div class="content-box">
+                <p><strong>Hoje é o dia de parar de ser "o cara que faz vídeos" e virar "o dono do negócio de vídeos".</strong> Sua meta é construir sistemas que funcionem sem você 24h por dia.</p>
+                <p>A IA é seu multiplicador de força. Ela faz o trabalho pesado de ter ideias e escrever roteiros, liberando seu tempo para estratégia e análise.</p>
             </div>
 
-            <!-- CAPÍTULO 1 -->
-            <div id="day2-chapter1" class="chapter-content active">
-                <h3>CAPÍTULO 1: A MENTALIDADE DO DIA 2</h3>
-                
-                <div class="content-box">
-                    <p><strong>Hoje é o dia de parar de ser "o cara que faz vídeos" e virar "o dono do negócio de vídeos".</strong> Sua meta é construir sistemas que funcionem sem você 24h por dia.</p>
-                    <p>A IA é seu multiplicador de força. Ela faz o trabalho pesado de ter ideias e escrever roteiros, liberando seu tempo para estratégia e análise.</p>
-                </div>
-
-                <div class="content-box">
-                    <h4>20 Conceitos para Escalar Rápido:</h4>
-                    <div class="principle-grid">
-                        <div class="principle-card">1. Cada Vídeo é um Ativo: Um vídeo no ar é um vendedor que nunca dorme</div>
-                        <div class="principle-card">2. Repetição com Variação: Achou um formato que funciona? Faça 10 variações</div>
-                        <div class="principle-card">3. Velocidade de Execução: Em 1h com IA, você faz o que faria em 1 dia sem ela</div>
-                        <div class="principle-card">4. Foco na Conversão: Agora o objetivo não é só view, é clique e venda</div>
-                        <div class="principle-card">5. Análise é Combustível: Dados mostram o caminho. Ignorar dados é andar no escuro</div>
-                        <div class="principle-card">6. O Funil é Sagrado: Cuide do caminho do cliente: Vídeo → Perfil → Link → Página de Vendas</div>
-                        <div class="principle-card">7. Produto Certo: O produto deve resolver exatamente a dor que seu conteúdo mostra</div>
-                        <div class="principle-card">8. Automação é Liberdade: Sistema vendendo enquanto você dorme</div>
-                        <div class="principle-card">9. Teste de Mensagem: Teste diferentes jeitos de falar do mesmo produto</div>
-                        <div class="principle-card">10. Paciente Urgente: Tenha pressa para agir, mas paciência para ver os resultados</div>
-                        <div class="principle-card">11. Nicho Profundo: Quanto mais específico, mais autoridade você constrói</div>
-                        <div class="principle-card">12. Valor Antes da Venda: Dê tanto valor gratuito que a venda seja consequência</div>
-                        <div class="principle-card">13. Consistência > Perfeição: 30 vídeos "ok" valem mais que 3 vídeos "perfeitos"</div>
-                        <div class="principle-card">14. Análise de Dados: O que é medido é melhorado. Acompanhe TUDO</div>
-                        <div class="principle-card">15. Teste A/B: Sempre teste duas versões para descobrir o que funciona melhor</div>
-                        <div class="principle-card">16. Foco no ROI: Cada hora investida deve trazer retorno financeiro</div>
-                        <div class="principle-card">17. Automatize Processos: Identifique tarefas repetitivas e automatize com IA</div>
-                        <div class="principle-card">18. Escala Progressiva: Comece pequeno, valide, depois escale</div>
-                        <div class="principle-card">19. Aprendizado Contínuo: O digital muda rápido. Esteja sempre aprendendo</div>
-                        <div class="principle-card">20. Mentalidade de Dono: Você não é funcionário do seu negócio, é o CEO</div>
-                    </div>
+            <div class="content-box">
+                <h4>20 Conceitos para Escalar Rápido:</h4>
+                <div class="principle-grid">
+                    <div class="principle-card">1. Cada Vídeo é um Ativo: Um vídeo no ar é um vendedor que nunca dorme</div>
+                    <div class="principle-card">2. Repetição com Variação: Achou um formato que funciona? Faça 10 variações</div>
+                    <div class="principle-card">3. Velocidade de Execução: Em 1h com IA, você faz o que faria em 1 dia sem ela</div>
+                    <div class="principle-card">4. Foco na Conversão: Agora o objetivo não é só view, é clique e venda</div>
+                    <div class="principle-card">5. Análise é Combustível: Dados mostram o caminho. Ignorar dados é andar no escuro</div>
+                    <div class="principle-card">6. O Funil é Sagrado: Cuide do caminho do cliente: Vídeo → Perfil → Link → Página de Vendas</div>
+                    <div class="principle-card">7. Produto Certo: O produto deve resolver exatamente a dor que seu conteúdo mostra</div>
+                    <div class="principle-card">8. Automação é Liberdade: Sistema vendendo enquanto você dorme</div>
+                    <div class="principle-card">9. Teste de Mensagem: Teste diferentes jeitos de falar do mesmo produto</div>
+                    <div class="principle-card">10. Paciente Urgente: Tenha pressa para agir, mas paciência para ver os resultados</div>
+                    <div class="principle-card">11. Nicho Profundo: Quanto mais específico, mais autoridade você constrói</div>
+                    <div class="principle-card">12. Valor Antes da Venda: Dê tanto valor gratuito que a venda seja consequência</div>
+                    <div class="principle-card">13. Consistência > Perfeição: 30 vídeos "ok" valem mais que 3 vídeos "perfeitos"</div>
+                    <div class="principle-card">14. Análise de Dados: O que é medido é melhorado. Acompanhe TUDO</div>
+                    <div class="principle-card">15. Teste A/B: Sempre teste duas versões para descobrir o que funciona melhor</div>
+                    <div class="principle-card">16. Foco no ROI: Cada hora investida deve trazer retorno financeiro</div>
+                    <div class="principle-card">17. Automatize Processos: Identifique tarefas repetitivas e automatize com IA</div>
+                    <div class="principle-card">18. Escala Progressiva: Comece pequeno, valide, depois escale</div>
+                    <div class="principle-card">19. Aprendizado Contínuo: O digital muda rápido. Esteja sempre aprendendo</div>
+                    <div class="principle-card">20. Mentalidade de Dono: Você não é funcionário do seu negócio, é o CEO</div>
                 </div>
             </div>
 
             <!-- CAPÍTULO 2 -->
-            <div id="day2-chapter2" class="chapter-content">
-                <h3>CAPÍTULO 2: AS FERRAMENTAS DO MILIONÁRIO DIGITAL</h3>
-                
-                <div class="content-box">
-                    <p><strong>Todas as ferramentas que você precisa são gratuitas ou têm versões free poderosas:</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 2: AS FERRAMENTAS DO MILIONÁRIO DIGITAL</h3>
+            
+            <div class="content-box">
+                <p><strong>Todas as ferramentas que você precisa são gratuitas ou têm versões free poderosas:</strong></p>
+            </div>
 
-                <div class="tool-grid">
-                    <div class="tool-card">
-                        <h4>🤖 ChatGPT (OpenAI)</h4>
-                        <p>Seu sócio para ideias e roteiros</p>
-                        <p><strong>Custo:</strong> Gratuito (versão 3.5)</p>
-                    </div>
-                    <div class="tool-card">
-                        <h4>🎬 CapCut</h4>
-                        <p>Seu estúdio de edição profissional no celular</p>
-                        <p><strong>Custo:</strong> Gratuito</p>
-                    </div>
-                    <div class="tool-card">
-                        <h4>🛒 Kiwify</h4>
-                        <p>Sua loja, caixa registradora e equipe de logística</p>
-                        <p><strong>Custo:</strong> Gratuito (comissão por venda)</p>
-                    </div>
-                    <div class="tool-card">
-                        <h4>📊 TikTok Analytics</h4>
-                        <p>Seu consultor de marketing gratuito</p>
-                        <p><strong>Custo:</strong> Gratuito</p>
-                    </div>
+            <div class="tool-grid">
+                <div class="tool-card">
+                    <h4>🤖 ChatGPT (OpenAI)</h4>
+                    <p>Seu sócio para ideias e roteiros</p>
+                    <p><strong>Custo:</strong> Gratuito (versão 3.5)</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🎬 CapCut</h4>
+                    <p>Seu estúdio de edição profissional no celular</p>
+                    <p><strong>Custo:</strong> Gratuito</p>
+                </div>
+                <div class="tool-card">
+                    <h4>🛒 Kiwify</h4>
+                    <p>Sua loja, caixa registradora e equipe de logística</p>
+                    <p><strong>Custo:</strong> Gratuito (comissão por venda)</p>
+                </div>
+                <div class="tool-card">
+                    <h4>📊 TikTok Analytics</h4>
+                    <p>Seu consultor de marketing gratuito</p>
+                    <p><strong>Custo:</strong> Gratuito</p>
                 </div>
             </div>
 
             <!-- CAPÍTULO 3 -->
-            <div id="day2-chapter3" class="chapter-content">
-                <h3>CAPÍTULO 3: CRIANDO CONTEÚDO EM ESCALA</h3>
+            <h3 class="chapter-header">CAPÍTULO 3: CRIANDO CONTEÚDO EM ESCALA</h3>
+            
+            <div class="content-box">
+                <h4>Passo a Passo para Criar 10 Vídeos em 3 Horas:</h4>
                 
-                <div class="content-box">
-                    <h4>Passo a Passo para Criar 10 Vídeos em 3 Horas:</h4>
-                    
-                    <p><strong>Passo 1 – Gere 30 Ideias com IA:</strong></p>
-                    <p>No ChatGPT:</p>
-                    <div class="concept-box">
-                        <p>"Atue como um especialista em marketing viral para TikTok. Gere 30 ideias para vídeos de 20 segundos sobre [SEU NICHO]. Cada ideia deve ter: 1) Um gancho irresistível nos 3 primeiros segundos. 2) Um conceito claro. 3) Uma sugestão de chamada para ação."</p>
-                    </div>
-
-                    <p><strong>Passo 2 – Crie 10 Roteiros em Lote:</strong></p>
-                    <p>Pegue as 10 melhores ideias. Agora, peça:</p>
-                    <div class="concept-box">
-                        <p>"Agora, escreva os roteiros completos para as seguintes 10 ideias: [COLE AQUI AS 10 IDEIAS]. Cada roteiro deve ter no máximo 150 palavras, linguagem coloquial e uma CTA pedindo para clicar no link da bio."</p>
-                    </div>
-
-                    <p><strong>Passo 3 – Edição em Lote no CapCut:</strong></p>
-                    <ol>
-                        <li>Abra o CapCut</li>
-                        <li>Grave todos os vídeos de uma vez (ou use a função Texto para Voz)</li>
-                        <li>Use um TEMPLATE. Crie um modelo com sua "assinatura visual": mesma fonte para legenda, mesma música de fundo, mesma transição. Isso agiliza TUDO</li>
-                        <li>Aplique o template em todos os vídeos, só trocando o conteúdo</li>
-                        <li>Exporte os 10 vídeos</li>
-                    </ol>
-
-                    <p><strong>Passo 4 – Publicação Estratégica:</strong></p>
-                    <p>Programe a publicação dos 10 vídeos ao longo do dia e dos próximos dias. 2-3 vídeos por dia é um bom ritmo.</p>
+                <p><strong>Passo 1 – Gere 30 Ideias com IA:</strong></p>
+                <p>No ChatGPT:</p>
+                <div class="concept-box">
+                    <p>"Atue como um especialista em marketing viral para TikTok. Gere 30 ideias para vídeos de 20 segundos sobre [SEU NICHO]. Cada ideia deve ter: 1) Um gancho irresistível nos 3 primeiros segundos. 2) Um conceito claro. 3) Uma sugestão de chamada para ação."</p>
                 </div>
 
-                <div class="activity-box">
-                    <h4>ATIVIDADE PRÁTICA 4 – IDENTIFIQUE O PATRÃO DO SUCESSO:</h4>
-                    <p>Volte aos vídeos do Dia 1. Qual roteiro performou melhor? O que ele tinha de especial? Era um "Como Fazer"? Uma "Revelação"? Um "Erro Comum"?</p>
-                    <p><strong>AÇÃO:</strong> Faça mais vídeos com essa mesma estrutura.</p>
+                <p><strong>Passo 2 – Crie 10 Roteiros em Lote:</strong></p>
+                <p>Pegue as 10 melhores ideias. Agora, peça:</p>
+                <div class="concept-box">
+                    <p>"Agora, escreva os roteiros completos para as seguintes 10 ideias: [COLE AQUI AS 10 IDEIAS]. Cada roteiro deve ter no máximo 150 palavras, linguagem coloquial e uma CTA pedindo para clicar no link da bio."</p>
                 </div>
+
+                <p><strong>Passo 3 – Edição em Lote no CapCut:</strong></p>
+                <ol>
+                    <li>Abra o CapCut</li>
+                    <li>Grave todos os vídeos de uma vez (ou use a função Texto para Voz)</li>
+                    <li>Use um TEMPLATE. Crie um modelo com sua "assinatura visual": mesma fonte para legenda, mesma música de fundo, mesma transição. Isso agiliza TUDO</li>
+                    <li>Aplique o template em todos os vídeos, só trocando o conteúdo</li>
+                    <li>Exporte os 10 vídeos</li>
+                </ol>
+
+                <p><strong>Passo 4 – Publicação Estratégica:</strong></p>
+                <p>Programe a publicação dos 10 vídeos ao longo do dia e dos próximos dias. 2-3 vídeos por dia é um bom ritmo.</p>
+            </div>
+
+            <div class="activity-box">
+                <h4>ATIVIDADE PRÁTICA 4 – IDENTIFIQUE O PATRÃO DO SUCESSO:</h4>
+                <p>Volte aos vídeos do Dia 1. Qual roteiro performou melhor? O que ele tinha de especial? Era um "Como Fazer"? Uma "Revelação"? Um "Erro Comum"?</p>
+                <p><strong>AÇÃO:</strong> Faça mais vídeos com essa mesma estrutura.</p>
             </div>
 
             <!-- CAPÍTULO 4 -->
-            <div id="day2-chapter4" class="chapter-content">
-                <h3>CAPÍTULO 4: O FUNIL DE VENDAS AUTOMÁTICO</h3>
-                
-                <div class="content-box">
-                    <p><strong>Agora vamos conectar o TikTok à Kiwify.</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 4: O FUNIL DE VENDAS AUTOMÁTICO</h3>
+            
+            <div class="content-box">
+                <p><strong>Agora vamos conectar o TikTok à Kiwify.</strong></p>
+            </div>
 
-                <div class="content-box">
-                    <h4>O Funil Simples e Poderoso:</h4>
-                    <ol>
-                        <li><strong>Vídeo no TikTok:</strong> Oferece valor e gera curiosidade. Termina com: "Quer aprender como fazer isso? O link completo está na minha bio!"</li>
-                        <li><strong>Link na Bio:</strong> O usuário clica e é levado à...</li>
-                        <li><strong>Página de Vendas da Kiwify:</strong> Uma página que explica o produto, seus benefícios e tem um botão de compra</li>
-                        <li><strong>Checkout:</strong> O usuário compra com PIX/cartão. A Kiwify entrega o produto digital na hora e te paga</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>O Funil Simples e Poderoso:</h4>
+                <ol>
+                    <li><strong>Vídeo no TikTok:</strong> Oferece valor e gera curiosidade. Termina com: "Quer aprender como fazer isso? O link completo está na minha bio!"</li>
+                    <li><strong>Link na Bio:</strong> O usuário clica e é levado à...</li>
+                    <li><strong>Página de Vendas da Kiwify:</strong> Uma página que explica o produto, seus benefícios e tem um botão de compra</li>
+                    <li><strong>Checkout:</strong> O usuário compra com PIX/cartão. A Kiwify entrega o produto digital na hora e te paga</li>
+                </ol>
+            </div>
 
-                <div class="content-box">
-                    <h4>Configurando na Prática:</h4>
-                    <ol>
-                        <li>Na Kiwify, vá em "Produtos" > "Adicionar Produto"</li>
-                        <li>Se for Afiliado, pegue o link de afiliado do produto que você escolheu no Marketplace</li>
-                        <li>Se for Criar seu Produto, clique em "Novo Produto". Coloque nome, descrição, preço e faça o upload do seu PDF/ZIP de vídeo-aulas</li>
-                        <li><strong>Dica de Ouro:</strong> Na descrição do produto, foque nos BENEFÍCIOS, não nas características
-                            <ul>
-                                <li>Ruim: "PDF com 20 páginas."</li>
-                                <li>BOM: "Aprenda o Método Secreto que me fez ganhar R$ 5.000,00 em 30 dias sem sair de casa, mesmo começando do zero."</li>
-                            </ul>
-                        </li>
-                        <li>Copie o link do seu produto na Kiwify</li>
-                        <li>Cole esse link no campo "Site" do seu perfil do TikTok</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>Configurando na Prática:</h4>
+                <ol>
+                    <li>Na Kiwify, vá em "Produtos" > "Adicionar Produto"</li>
+                    <li>Se for Afiliado, pegue o link de afiliado do produto que você escolheu no Marketplace</li>
+                    <li>Se for Criar seu Produto, clique em "Novo Produto". Coloque nome, descrição, preço e faça o upload do seu PDF/ZIP de vídeo-aulas</li>
+                    <li><strong>Dica de Ouro:</strong> Na descrição do produto, foque nos BENEFÍCIOS, não nas características
+                        <ul>
+                            <li>Ruim: "PDF com 20 páginas."</li>
+                            <li>BOM: "Aprenda o Método Secreto que me fez ganhar R$ 5.000,00 em 30 dias sem sair de casa, mesmo começando do zero."</li>
+                        </ul>
+                    </li>
+                    <li>Copie o link do seu produto na Kiwify</li>
+                    <li>Cole esse link no campo "Site" do seu perfil do TikTok</li>
+                </ol>
+            </div>
 
-                <div class="activity-box">
-                    <h4>ATIVIDADE PRÁTICA 5 – PONHA O FUNIL PARA RODAR:</h4>
-                    <ol>
-                        <li>Escolha DEFINITIVAMENTE seu primeiro produto (afiliado ou próprio)</li>
-                        <li>Coloque o link na bio do TikTok</li>
-                        <li>Faça um vídeo novo ESPECÍFICO para esse produto. Ex: "3 coisas que eu wish eu sabia antes de começar... [chamar para o link]"</li>
-                    </ol>
-                </div>
+            <div class="activity-box">
+                <h4>ATIVIDADE PRÁTICA 5 – PONHA O FUNIL PARA RODAR:</h4>
+                <ol>
+                    <li>Escolha DEFINITIVAMENTE seu primeiro produto (afiliado ou próprio)</li>
+                    <li>Coloque o link na bio do TikTok</li>
+                    <li>Faça um vídeo novo ESPECÍFICO para esse produto. Ex: "3 coisas que eu wish eu sabia antes de começar... [chamar para o link]"</li>
+                </ol>
             </div>
 
             <!-- CAPÍTULO 5 -->
-            <div id="day2-chapter5" class="chapter-content">
-                <h3>CAPÍTULO 5: CRIANDO SEU PRIMEIRO PRODUTO DIGITAL</h3>
-                
-                <div class="content-box">
-                    <p><strong>Não tenha medo. Seu primeiro produto não precisa ser uma obra-prima. Precisa ser ÚTIL.</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 5: CRIANDO SEU PRIMEIRO PRODUTO DIGITAL</h3>
+            
+            <div class="content-box">
+                <p><strong>Não tenha medo. Seu primeiro produto não precisa ser uma obra-prima. Precisa ser ÚTIL.</strong></p>
+            </div>
 
-                <div class="content-box">
-                    <h4>Estrutura de um Produto Digital Simples (PDF/E-book):</h4>
-                    <ol>
-                        <li><strong>Capa:</strong> Crie no Canva. Use um template. Coloque um título chamativo</li>
-                        <li><strong>Introdução:</strong> Fale brevemente sobre o problema que você vai resolver</li>
-                        <li><strong>Capítulo 1:</strong> O Básico/Os Fundamentos</li>
-                        <li><strong>Capítulo 2:</strong> O Método Passo a Passo (o "carne" do produto)</li>
-                        <li><strong>Capítulo 3:</strong> Dicas Bônus/Armadilhas para Evitar</li>
-                        <li><strong>Conclusão:</strong> Agradeça e dê um último incentivo</li>
-                    </ol>
-                </div>
+            <div class="content-box">
+                <h4>Estrutura de um Produto Digital Simples (PDF/E-book):</h4>
+                <ol>
+                    <li><strong>Capa:</strong> Crie no Canva. Use um template. Coloque um título chamativo</li>
+                    <li><strong>Introdução:</strong> Fale brevemente sobre o problema que você vai resolver</li>
+                    <li><strong>Capítulo 1:</strong> O Básico/Os Fundamentos</li>
+                    <li><strong>Capítulo 2:</strong> O Método Passo a Passo (o "carne" do produto)</li>
+                    <li><strong>Capítulo 3:</strong> Dicas Bônus/Armadilhas para Evitar</li>
+                    <li><strong>Conclusão:</strong> Agradeça e dê um último incentivo</li>
+                </ol>
+            </div>
 
-                <div class="content-box">
-                    <h4>Como Criar Rápido (EM 1 HORA):</h4>
-                    <ol>
-                        <li>Abra o ChatGPT</li>
-                        <li>Digite: "Escreva um e-book de 15 páginas sobre [TEMA DO SEU PRODUTO]. Estruture em capítulos com títulos e subtítulos. Use linguagem simples e direta."</li>
-                        <li>Copie e cole o texto no Canva</li>
-                        <li>Formate, adicione imagens de banco gratuito (Pexels, Pixabay)</li>
-                        <li>Exporte como PDF</li>
-                    </ol>
-                    <p><strong>Pronto! Você tem um produto. Valor: R$ 37,00 a R$ 97,00.</strong></p>
-                </div>
+            <div class="content-box">
+                <h4>Como Criar Rápido (EM 1 HORA):</h4>
+                <ol>
+                    <li>Abra o ChatGPT</li>
+                    <li>Digite: "Escreva um e-book de 15 páginas sobre [TEMA DO SEU PRODUTO]. Estruture em capítulos com títulos e subtítulos. Use linguagem simples e direta."</li>
+                    <li>Copie e cole o texto no Canva</li>
+                    <li>Formate, adicione imagens de banco gratuito (Pexels, Pixabay)</li>
+                    <li>Exporte como PDF</li>
+                </ol>
+                <p><strong>Pronto! Você tem um produto. Valor: R$ 37,00 a R$ 97,00.</strong></p>
             </div>
 
             <!-- CAPÍTULO 6 -->
-            <div id="day2-chapter6" class="chapter-content">
-                <h3>CAPÍTULO 6: ESCALANDO COM IA – REPETINDO O SUCESSO</h3>
-                
-                <div class="content-box">
-                    <p><strong>Agora que você tem vídeos no ar e um funil, é hora de otimizar.</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 6: ESCALANDO COM IA – REPETINDO O SUCESSO</h3>
+            
+            <div class="content-box">
+                <p><strong>Agora que você tem vídeos no ar e um funil, é hora de otimizar.</strong></p>
+            </div>
 
-                <div class="concept-box">
-                    <h4>🚀 Estratégias de Escala:</h4>
-                    <ul>
-                        <li><strong>Reaproveitamento:</strong> Pegue um vídeo que viralizou e crie 3 variações: mude o título, mude o gancho inicial, edite de forma diferente</li>
-                        <li><strong>Templates são Vida:</strong> Sempre use o mesmo template de edição. Economiza 80% do tempo</li>
-                        <li><strong>Multiplexação:</strong> Poste os mesmos vídeos (ou adaptados) no Reels (Instagram) e Shorts (YouTube)</li>
-                        <li><strong>Análise de Dados:</strong> Identifique padrões nos vídeos que convertem e replique</li>
-                        <li><strong>Automação com IA:</strong> Use prompts específicos no ChatGPT para gerar conteúdo em massa</li>
-                    </ul>
-                </div>
+            <div class="concept-box">
+                <h4>🚀 Estratégias de Escala:</h4>
+                <ul>
+                    <li><strong>Reaproveitamento:</strong> Pegue um vídeo que viralizou e crie 3 variações: mude o título, mude o gancho inicial, edite de forma diferente</li>
+                    <li><strong>Templates são Vida:</strong> Sempre use o mesmo template de edição. Economiza 80% do tempo</li>
+                    <li><strong>Multiplexação:</strong> Poste os mesmos vídeos (ou adaptados) no Reels (Instagram) e Shorts (YouTube)</li>
+                    <li><strong>Análise de Dados:</strong> Identifique padrões nos vídeos que convertem e replique</li>
+                    <li><strong>Automação com IA:</strong> Use prompts específicos no ChatGPT para gerar conteúdo em massa</li>
+                </ul>
+            </div>
 
-                <div class="activity-box">
-                    <h4>✅ DIA 2 FINALIZADO!</h4>
-                    <p><strong>Sua operação agora é profissional.</strong> Você tem:</p>
-                    <ul>
-                        <li>10+ Vídeos Criados com IA</li>
-                        <li>Funil de Vendas Ativo (Link na Bio)</li>
-                        <li>Produto Digital Pronto para Vender</li>
-                        <li>"Fábrica" de Conteúdo Montada</li>
-                    </ul>
-                    <p><strong>Amanhã é o grande dia: vamos fazer o dinheiro entrar e aprender a escalar para o infinito.</strong></p>
-                </div>
+            <div class="activity-box">
+                <h4>✅ DIA 2 FINALIZADO!</h4>
+                <p><strong>Sua operação agora é profissional.</strong> Você tem:</p>
+                <ul>
+                    <li>10+ Vídeos Criados com IA</li>
+                    <li>Funil de Vendas Ativo (Link na Bio)</li>
+                    <li>Produto Digital Pronto para Vender</li>
+                    <li>"Fábrica" de Conteúdo Montada</li>
+                </ul>
+                <p><strong>Amanhã é o grande dia: vamos fazer o dinheiro entrar e aprender a escalar para o infinito.</strong></p>
             </div>
 
             <div class="nav-buttons">
@@ -1123,252 +1045,228 @@
                 <div class="progress-bar" id="day3-progress"></div>
             </div>
 
-            <div class="chapter-nav">
-                <button class="chapter-btn active" onclick="showChapter('day3', 'chapter1')">Análise de Dados</button>
-                <button class="chapter-btn" onclick="showChapter('day3', 'chapter2')">Testes Avançados</button>
-                <button class="chapter-btn" onclick="showChapter('day3', 'chapter3')">Reinvestimento</button>
-                <button class="chapter-btn" onclick="showChapter('day3', 'chapter4')">Mentalidade</button>
-                <button class="chapter-btn" onclick="showChapter('day3', 'chapter5')">Rotina do Chefe</button>
-                <button class="chapter-btn" onclick="showChapter('day3', 'chapter6')">Renda Passiva</button>
-                <button class="chapter-btn" onclick="showChapter('day3', 'chapter7')">Práticas Essenciais</button>
+            <!-- CAPÍTULO 1 -->
+            <h3 class="chapter-header">CAPÍTULO 1: ANALISANDO RESULTADOS – O MAPA DO TESOURO</h3>
+            
+            <div class="content-box">
+                <p><strong>Dados não mentem.</strong> Eles mostram exatamente o que fazer mais e o que parar de fazer.</p>
             </div>
 
-            <!-- CAPÍTULO 1 -->
-            <div id="day3-chapter1" class="chapter-content active">
-                <h3>CAPÍTULO 1: ANALISANDO RESULTADOS – O MAPA DO TESOURO</h3>
-                
-                <div class="content-box">
-                    <p><strong>Dados não mentem.</strong> Eles mostram exatamente o que fazer mais e o que parar de fazer.</p>
-                </div>
+            <div class="concept-box">
+                <h4>As Métricas que Importam:</h4>
+                <p><strong>TikTok Analytics:</strong></p>
+                <ul>
+                    <li><strong>Visualizações:</strong> Alcance total</li>
+                    <li><strong>Taxa de Retenção:</strong> % de pessoas que viram o vídeo até o final. Acima de 50% é ótimo</li>
+                    <li><strong>Crescimento de Seguidores:</strong> Qual vídeo trouxe mais seguidores?</li>
+                </ul>
+                <p><strong>Kiwify Dashboard:</strong></p>
+                <ul>
+                    <li><strong>Cliques no Link:</strong> Quantas pessoas clicaram no seu produto?</li>
+                    <li><strong>Vendas:</strong> Quantas compras foram feitas?</li>
+                    <li><strong>Taxa de Conversão:</strong> (Vendas / Cliques) * 100. 1% a 5% é bom no início</li>
+                </ul>
+            </div>
 
-                <div class="concept-box">
-                    <h4>As Métricas que Importam:</h4>
-                    <p><strong>TikTok Analytics:</strong></p>
-                    <ul>
-                        <li><strong>Visualizações:</strong> Alcance total</li>
-                        <li><strong>Taxa de Retenção:</strong> % de pessoas que viram o vídeo até o final. Acima de 50% é ótimo</li>
-                        <li><strong>Crescimento de Seguidores:</strong> Qual vídeo trouxe mais seguidores?</li>
-                    </ul>
-                    <p><strong>Kiwify Dashboard:</strong></p>
-                    <ul>
-                        <li><strong>Cliques no Link:</strong> Quantas pessoas clicaram no seu produto?</li>
-                        <li><strong>Vendas:</strong> Quantas compras foram feitas?</li>
-                        <li><strong>Taxa de Conversão:</strong> (Vendas / Cliques) * 100. 1% a 5% é bom no início</li>
-                    </ul>
+            <div class="activity-box">
+                <h4>ATIVIDADE PRÁTICA 6 – FAÇA SUA PLANILHA SIMPLES:</h4>
+                <p>No caderno, crie uma tabela:</p>
+                <div style="overflow-x: auto; margin: 15px 0;">
+                    <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden;">
+                        <thead>
+                            <tr style="background: rgba(138,43,226,0.3);">
+                                <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Data</th>
+                                <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Título do Vídeo</th>
+                                <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Views</th>
+                                <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Retenção</th>
+                                <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Cliques</th>
+                                <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Vendas</th>
+                                <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Conversão</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">01/01</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">Como ganhei R$100</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">10.000</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">60%</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">100</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">2</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">2%</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">02/01</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">3 Erros sobre IA</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">50.000</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">75%</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">600</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">12</td>
+                                <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">2%</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
-
-                <div class="activity-box">
-                    <h4>ATIVIDADE PRÁTICA 6 – FAÇA SUA PLANILHA SIMPLES:</h4>
-                    <p>No caderno, crie uma tabela:</p>
-                    <div style="overflow-x: auto; margin: 15px 0;">
-                        <table style="width: 100%; border-collapse: collapse; background: rgba(255,255,255,0.05); border-radius: 8px; overflow: hidden;">
-                            <thead>
-                                <tr style="background: rgba(138,43,226,0.3);">
-                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Data</th>
-                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Título do Vídeo</th>
-                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Views</th>
-                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Retenção</th>
-                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Cliques</th>
-                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Vendas</th>
-                                    <th style="padding: 10px; border: 1px solid rgba(255,255,255,0.1); text-align: left;">Conversão</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">01/01</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">Como ganhei R$100</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">10.000</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">60%</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">100</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">2</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">2%</td>
-                                </tr>
-                                <tr>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">02/01</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">3 Erros sobre IA</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">50.000</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">75%</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">600</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">12</td>
-                                    <td style="padding: 8px; border: 1px solid rgba(255,255,255,0.1);">2%</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <p><strong>AÇÃO:</strong> Olhe para a planilha. Qual vídeo gerou mais VENDAS, não só views? FAÇA MAIS VÍDEOS IGUAIS A ESSE.</p>
-                </div>
+                <p><strong>AÇÃO:</strong> Olhe para a planilha. Qual vídeo gerou mais VENDAS, não só views? FAÇA MAIS VÍDEOS IGUAIS A ESSE.</p>
             </div>
 
             <!-- CAPÍTULO 2 -->
-            <div id="day3-chapter2" class="chapter-content">
-                <h3>CAPÍTULO 2: TESTES AVANÇADOS – APERFEIÇOANDO A MÁQUINA</h3>
-                
-                <div class="content-box">
-                    <p><strong>Agora você vai fazer testes A/B.</strong> É simples: crie duas versões do que está funcionando.</p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 2: TESTES AVANÇADOS – APERFEIÇOANDO A MÁQUINA</h3>
+            
+            <div class="content-box">
+                <p><strong>Agora você vai fazer testes A/B.</strong> É simples: crie duas versões do que está funcionando.</p>
+            </div>
 
-                <div class="content-box">
-                    <h4>O que Testar:</h4>
-                    <ul>
-                        <li><strong>Ganchos Diferentes:</strong> Para o MESMO conteúdo, grave dois inícios diferentes</li>
-                        <li><strong>Chamadas para Ação (CTA):</strong> "Clique no link" vs. "O método completo está no link"</li>
-                        <li><strong>Horários de Postagem:</strong> Manhã vs. Tarde vs. Noite</li>
-                        <li><strong>Legendas:</strong> Com e sem texto na tela</li>
-                        <li><strong>Duração do Vídeo:</strong> 15s vs. 30s vs. 45s</li>
-                        <li><strong>Música de Fundo:</strong> Com música vs. Sem música</li>
-                    </ul>
-                </div>
+            <div class="content-box">
+                <h4>O que Testar:</h4>
+                <ul>
+                    <li><strong>Ganchos Diferentes:</strong> Para o MESMO conteúdo, grave dois inícios diferentes</li>
+                    <li><strong>Chamadas para Ação (CTA):</strong> "Clique no link" vs. "O método completo está no link"</li>
+                    <li><strong>Horários de Postagem:</strong> Manhã vs. Tarde vs. Noite</li>
+                    <li><strong>Legendas:</strong> Com e sem texto na tela</li>
+                    <li><strong>Duração do Vídeo:</strong> 15s vs. 30s vs. 45s</li>
+                    <li><strong>Música de Fundo:</strong> Com música vs. Sem música</li>
+                </ul>
+            </div>
 
-                <div class="concept-box">
-                    <h4>💡 REGRA DE OURO:</h4>
-                    <p><strong>Mude apenas UMA coisa por teste</strong> para saber o que causou a diferença.</p>
-                    <p>Exemplo: Teste dois ganchos diferentes, mas mantenha TODO o resto igual.</p>
-                </div>
+            <div class="concept-box">
+                <h4>💡 REGRA DE OURO:</h4>
+                <p><strong>Mude apenas UMA coisa por teste</strong> para saber o que causou a diferença.</p>
+                <p>Exemplo: Teste dois ganchos diferentes, mas mantenha TODO o resto igual.</p>
             </div>
 
             <!-- CAPÍTULO 3 -->
-            <div id="day3-chapter3" class="chapter-content">
-                <h3>CAPÍTULO 3: REINVESTINDO O LUCRO – A ALQUIMIA DO CRESCIMENTO</h3>
-                
-                <div class="content-box">
-                    <p><strong>Seu primeiro dinheiro não é para ostentar. É para reinvestir e fazer o negócio crescer.</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 3: REINVESTINDO O LUCRO – A ALQUIMIA DO CRESCIMENTO</h3>
+            
+            <div class="content-box">
+                <p><strong>Seu primeiro dinheiro não é para ostentar. É para reinvestir e fazer o negócio crescer.</strong></p>
+            </div>
 
-                <div class="content-box">
-                    <h4>Como Reinvestir Inteligentemente:</h4>
-                    
-                    <p><strong>1. Anúncios no TikTok (Promover):</strong> É a forma mais rápida de escalar.</p>
-                    
-                    <p><strong>2. Como Fazer:</strong></p>
-                    <ul>
-                        <li>No TikTok, clique em "Promover" em um vídeo que já está performando bem organicamente</li>
-                        <li>Objetivo: Escolha "Cliques no site"</li>
-                        <li>Orçamento: Comece com R$ 10,00 por dia</li>
-                        <li>Público: Deixe o TikTok escolher automaticamente (ele é inteligente)</li>
-                    </ul>
-                    
-                    <p><strong>3. Resultado Esperado:</strong></p>
-                    <p>Se um vídeo orgânico trouxe 100 cliques por R$ 0,00, com R$ 10,00 ele pode trazer 200-500 cliques extras. Se sua conversão for de 2%, você terá 4-10 vendas extras. Se seu produto custa R$ 47,00, você gerou R$ 188,00 - R$ 470,00 em vendas com um investimento de R$ 10,00.</p>
-                    
-                    <p><strong>É isso que os ricos fazem: usam dinheiro para fazer mais dinheiro.</strong></p>
-                </div>
+            <div class="content-box">
+                <h4>Como Reinvestir Inteligentemente:</h4>
+                
+                <p><strong>1. Anúncios no TikTok (Promover):</strong> É a forma mais rápida de escalar.</p>
+                
+                <p><strong>2. Como Fazer:</strong></p>
+                <ul>
+                    <li>No TikTok, clique em "Promover" em um vídeo que já está performando bem organicamente</li>
+                    <li>Objetivo: Escolha "Cliques no site"</li>
+                    <li>Orçamento: Comece com R$ 10,00 por dia</li>
+                    <li>Público: Deixe o TikTok escolher automaticamente (ele é inteligente)</li>
+                </ul>
+                
+                <p><strong>3. Resultado Esperado:</strong></p>
+                <p>Se um vídeo orgânico trouxe 100 cliques por R$ 0,00, com R$ 10,00 ele pode trazer 200-500 cliques extras. Se sua conversão for de 2%, você terá 4-10 vendas extras. Se seu produto custa R$ 47,00, você gerou R$ 188,00 - R$ 470,00 em vendas com um investimento de R$ 10,00.</p>
+                
+                <p><strong>É isso que os ricos fazem: usam dinheiro para fazer mais dinheiro.</strong></p>
             </div>
 
             <!-- CAPÍTULO 4 -->
-            <div id="day3-chapter4" class="chapter-content">
-                <h3>CAPÍTULO 4: A MENTALIDADE DO BILIONÁRIO</h3>
-                
-                <div class="content-box">
-                    <p><strong>O jogo agora muda. Você não é mais um "criador de conteúdo", você é um empreendedor digital.</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 4: A MENTALIDADE DO BILIONÁRIO</h3>
+            
+            <div class="content-box">
+                <p><strong>O jogo agora muda. Você não é mais um "criador de conteúdo", você é um empreendedor digital.</strong></p>
+            </div>
 
-                <div class="concept-box">
-                    <h4>🧠 Princípios da Mentalidade Bilionária:</h4>
-                    <ul>
-                        <li><strong>Cada Vídeo é um Ativo:</strong> Um vídeo no ar é como um imóvel alugado. Ele gera renda passiva</li>
-                        <li><strong>Sistemas > Esforço Pessoal:</strong> Seu funil (TikTok + Kiwify) é o sistema. Sua missão é melhorá-lo</li>
-                        <li><strong>Aprendizado Contínuo:</strong> O digital muda. O que funciona hoje pode mudar amanhã. Esteja sempre aprendendo</li>
-                        <li><strong>Paciência e Persistência:</strong> Você terá vídeos com 100 views e outros com 100.000. A persistência é o que separa o sucesso do fracasso</li>
-                        <li><strong>Foco em Valor:</strong> Quanto mais valor você entrega, mais dinheiro você ganha</li>
-                        <li><strong>Escala Mental:</strong> Pense em servir milhares, não apenas algumas pessoas</li>
-                        <li><strong>Automação como Meta:</strong> Seu objetivo é construir sistemas que funcionem sem você</li>
-                    </ul>
-                </div>
+            <div class="concept-box">
+                <h4>🧠 Princípios da Mentalidade Bilionária:</h4>
+                <ul>
+                    <li><strong>Cada Vídeo é um Ativo:</strong> Um vídeo no ar é como um imóvel alugado. Ele gera renda passiva</li>
+                    <li><strong>Sistemas > Esforço Pessoal:</strong> Seu funil (TikTok + Kiwify) é o sistema. Sua missão é melhorá-lo</li>
+                    <li><strong>Aprendizado Contínuo:</strong> O digital muda. O que funciona hoje pode mudar amanhã. Esteja sempre aprendendo</li>
+                    <li><strong>Paciência e Persistência:</strong> Você terá vídeos com 100 views e outros com 100.000. A persistência é o que separa o sucesso do fracasso</li>
+                    <li><strong>Foco em Valor:</strong> Quanto mais valor você entrega, mais dinheiro você ganha</li>
+                    <li><strong>Escala Mental:</strong> Pense em servir milhares, não apenas algumas pessoas</li>
+                    <li><strong>Automação como Meta:</strong> Seu objetivo é construir sistemas que funcionem sem você</li>
+                </ul>
             </div>
 
             <!-- CAPÍTULO 5 -->
-            <div id="day3-chapter5" class="chapter-content">
-                <h3>CAPÍTULO 5: A ROTINA DO CHEFE</h3>
-                
-                <div class="content-box">
-                    <p><strong>Sua rotina agora é de estratégia e gestão, não apenas execução.</strong></p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 5: A ROTINA DO CHEFE</h3>
+            
+            <div class="content-box">
+                <p><strong>Sua rotina agora é de estratégia e gestão, não apenas execução.</strong></p>
+            </div>
 
-                <div class="concept-box">
-                    <h4>📅 Rotina do CEO Digital:</h4>
-                    <ul>
-                        <li><strong>Manhã (1h):</strong> Análise de dados, planejamento das ideias com IA</li>
-                        <li><strong>Tarde (2h):</strong> Criação em lote dos vídeos (usando templates)</li>
-                        <li><strong>Fim de Tarde (30 min):</strong> Agendamento das publicações</li>
-                        <li><strong>Noite (15 min):</strong> Verificação de vendas e ajustes finos</li>
-                    </ul>
-                </div>
+            <div class="concept-box">
+                <h4>📅 Rotina do CEO Digital:</h4>
+                <ul>
+                    <li><strong>Manhã (1h):</strong> Análise de dados, planejamento das ideias com IA</li>
+                    <li><strong>Tarde (2h):</strong> Criação em lote dos vídeos (usando templates)</li>
+                    <li><strong>Fim de Tarde (30 min):</strong> Agendamento das publicações</li>
+                    <li><strong>Noite (15 min):</strong> Verificação de vendas e ajustes finos</li>
+                </ul>
+            </div>
 
-                <div class="content-box">
-                    <h4>O Que Você NÃO Deve Fazer Mais:</h4>
-                    <ul>
-                        <li>❌ Ficar horas editando um único vídeo</li>
-                        <li>❌ Postar apenas quando "tiver vontade"</li>
-                        <li>❌ Ignorar dados e analytics</li>
-                        <li>❌ Trabalhar sem um sistema</li>
-                        <li>❌ Fazer tudo manualmente</li>
-                    </ul>
-                </div>
+            <div class="content-box">
+                <h4>O Que Você NÃO Deve Fazer Mais:</h4>
+                <ul>
+                    <li>❌ Ficar horas editando um único vídeo</li>
+                    <li>❌ Postar apenas quando "tiver vontade"</li>
+                    <li>❌ Ignorar dados e analytics</li>
+                    <li>❌ Trabalhar sem um sistema</li>
+                    <li>❌ Fazer tudo manualmente</li>
+                </ul>
             </div>
 
             <!-- CAPÍTULO 6 -->
-            <div id="day3-chapter6" class="chapter-content">
-                <h3>CAPÍTULO 6: CONSTRUINDO A RENDA PASSIVA</h3>
-                
-                <div class="content-box">
-                    <p><strong>Renda passiva é ganhar dinheiro sem trocar tempo por dinheiro, diretamente.</strong> Seu funil faz isso.</p>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 6: CONSTRUINDO A RENDA PASSIVA</h3>
+            
+            <div class="content-box">
+                <p><strong>Renda passiva é ganhar dinheiro sem trocar tempo por dinheiro, diretamente.</strong> Seu funil faz isso.</p>
+            </div>
 
-                <div class="concept-box">
-                    <h4>💰 Como a Renda Passiva Funciona no Digital:</h4>
-                    <ul>
-                        <li><strong>Vídeos Antigos Vendem:</strong> Um vídeo de 2 meses atrás pode vender todo dia</li>
-                        <li><strong>Biblioteca de Conteúdo:</strong> Quanto mais vídeos você posta, mais "ativos" tem gerando tráfego</li>
-                        <li><strong>A Kiwify é Automática:</strong> Ela lida com tudo 24/7</li>
-                        <li><strong>Scalabilidade Infinita:</strong> Seu produto pode ser vendido para 1 pessoa ou 1 milhão sem custo extra</li>
-                        <li><strong>Efeito Composto:</strong> Cada novo vídeo aumenta o potencial de todos os vídeos antigos</li>
-                    </ul>
-                </div>
+            <div class="concept-box">
+                <h4>💰 Como a Renda Passiva Funciona no Digital:</h4>
+                <ul>
+                    <li><strong>Vídeos Antigos Vendem:</strong> Um vídeo de 2 meses atrás pode vender todo dia</li>
+                    <li><strong>Biblioteca de Conteúdo:</strong> Quanto mais vídeos você posta, mais "ativos" tem gerando tráfego</li>
+                    <li><strong>A Kiwify é Automática:</strong> Ela lida com tudo 24/7</li>
+                    <li><strong>Scalabilidade Infinita:</strong> Seu produto pode ser vendido para 1 pessoa ou 1 milhão sem custo extra</li>
+                    <li><strong>Efeito Composto:</strong> Cada novo vídeo aumenta o potencial de todos os vídeos antigos</li>
+                </ul>
+            </div>
 
-                <div class="content-box">
-                    <h4>📈 Exemplo de Renda Passiva em Ação:</h4>
-                    <p>Você tem 100 vídeos no ar. Cada vídeo gera em média:</p>
-                    <ul>
-                        <li>1.000 views por mês (conservador)</li>
-                        <li>1% clica no link → 10 cliques por vídeo</li>
-                        <li>2% converte em venda → 0,2 vendas por vídeo</li>
-                        <li>Produto de R$ 47,00 → R$ 9,40 por vídeo por mês</li>
-                    </ul>
-                    <p><strong>100 vídeos × R$ 9,40 = R$ 940,00/mês PASSIVO</strong></p>
-                    <p>E isso é só o começo!</p>
-                </div>
+            <div class="content-box">
+                <h4>📈 Exemplo de Renda Passiva em Ação:</h4>
+                <p>Você tem 100 vídeos no ar. Cada vídeo gera em média:</p>
+                <ul>
+                    <li>1.000 views por mês (conservador)</li>
+                    <li>1% clica no link → 10 cliques por vídeo</li>
+                    <li>2% converte em venda → 0,2 vendas por vídeo</li>
+                    <li>Produto de R$ 47,00 → R$ 9,40 por vídeo por mês</li>
+                </ul>
+                <p><strong>100 vídeos × R$ 9,40 = R$ 940,00/mês PASSIVO</strong></p>
+                <p>E isso é só o começo!</p>
             </div>
 
             <!-- CAPÍTULO 7 -->
-            <div id="day3-chapter7" class="chapter-content">
-                <h3>CAPÍTULO 7: AS 10 PRÁTICAS ESSENCIAIS DO MILIONÁRIO DIGITAL</h3>
-                
-                <div class="content-box">
-                    <ol>
-                        <li><strong>Crie Todo Dia:</strong> Mesmo que seja 1 vídeo. Consistência é não negociável</li>
-                        <li><strong>Analise Todo Dia:</strong> 5 minutos para ver o que funcionou</li>
-                        <li><strong>Teste Sempre:</strong> Nunca ache que "já sabe" de tudo</li>
-                        <li><strong>Reaproveite Tudo:</strong> Um sucesso vira 5 novos conteúdos</li>
-                        <li><strong>Ouvir o Público:</strong> Comentários são pesquisas de mercado grátis</li>
-                        <li><strong>Estude a Concorrência:</strong> Os melhores já descobriram o que funciona. Copie ESTRATÉGIAS, não conteúdo</li>
-                        <li><strong>Cuide do Funil:</strong> O link quebrou? A página de vendas está confusa? Corrija</li>
-                        <li><strong>Aprimore o Produto:</strong> Adicione bônus, melhore o conteúdo com o tempo</li>
-                        <li><strong>Networking:</strong> Converse com outros criadores do seu nicho</li>
-                        <li><strong>NUNCA DESISTA:</strong> A maioria desiste antes da primeira venda. Seja persistente</li>
-                    </ol>
-                </div>
+            <h3 class="chapter-header">CAPÍTULO 7: AS 10 PRÁTICAS ESSENCIAIS DO MILIONÁRIO DIGITAL</h3>
+            
+            <div class="content-box">
+                <ol>
+                    <li><strong>Crie Todo Dia:</strong> Mesmo que seja 1 vídeo. Consistência é não negociável</li>
+                    <li><strong>Analise Todo Dia:</strong> 5 minutos para ver o que funcionou</li>
+                    <li><strong>Teste Sempre:</strong> Nunca ache que "já sabe" de tudo</li>
+                    <li><strong>Reaproveite Tudo:</strong> Um sucesso vira 5 novos conteúdos</li>
+                    <li><strong>Ouvir o Público:</strong> Comentários são pesquisas de mercado grátis</li>
+                    <li><strong>Estude a Concorrência:</strong> Os melhores já descobriram o que funciona. Copie ESTRATÉGIAS, não conteúdo</li>
+                    <li><strong>Cuide do Funil:</strong> O link quebrou? A página de vendas está confusa? Corrija</li>
+                    <li><strong>Aprimore o Produto:</strong> Adicione bônus, melhore o conteúdo com o tempo</li>
+                    <li><strong>Networking:</strong> Converse com outros criadores do seu nicho</li>
+                    <li><strong>NUNCA DESISTA:</strong> A maioria desiste antes da primeira venda. Seja persistente</li>
+                </ol>
+            </div>
 
-                <div class="activity-box">
-                    <h4>✅ DIA 3 FINALIZADO! PARABÉNS! 🎉</h4>
-                    <p><strong>Você concluiu a fase de implantação. Agora você é o CEO do seu negócio digital.</strong> Você tem:</p>
-                    <ul>
-                        <li>Um Sistema de Análise de Dados</li>
-                        <li>Estratégia de Reinvestimento</li>
-                        <li>Mentalidade de Empreendedor</li>
-                        <li>Rotina de Gestão</li>
-                        <li>Uma Máquina de Renda Passiva em Funcionamento</li>
-                    </ul>
-                </div>
+            <div class="activity-box">
+                <h4>✅ DIA 3 FINALIZADO! PARABÉNS! 🎉</h4>
+                <p><strong>Você concluiu a fase de implantação. Agora você é o CEO do seu negócio digital.</strong> Você tem:</p>
+                <ul>
+                    <li>Um Sistema de Análise de Dados</li>
+                    <li>Estratégia de Reinvestimento</li>
+                    <li>Mentalidade de Empreendedor</li>
+                    <li>Rotina de Gestão</li>
+                    <li>Uma Máquina de Renda Passiva em Funcionamento</li>
+                </ul>
             </div>
 
             <!-- PLANO DOS PRÓXIMOS 5 MESES -->
@@ -1493,73 +1391,16 @@
                 
                 // Atualizar progresso
                 if (sectionId === 'day1') {
-                    document.getElementById('day1-progress').style.width = '30%';
-                    loadProgress('day1');
+                    document.getElementById('day1-progress').style.width = '100%';
                 } else if (sectionId === 'day2') {
-                    document.getElementById('day2-progress').style.width = '60%';
-                    loadProgress('day2');
+                    document.getElementById('day2-progress').style.width = '100%';
                 } else if (sectionId === 'day3') {
-                    document.getElementById('day3-progress').style.width = '90%';
-                    loadProgress('day3');
+                    document.getElementById('day3-progress').style.width = '100%';
                 }
             }
             
             // Salvar seção atual
             localStorage.setItem('currentSection', sectionId);
-        }
-
-        // Navegação entre capítulos
-        function showChapter(day, chapter) {
-            // Esconder todos os capítulos do dia
-            document.querySelectorAll(`#${day} .chapter-content`).forEach(chapter => {
-                chapter.style.display = 'none';
-            });
-            
-            // Mostrar capítulo selecionado
-            document.getElementById(`${day}-${chapter}`).style.display = 'block';
-            
-            // Atualizar botões ativos
-            document.querySelectorAll(`#${day} .chapter-btn`).forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            
-            // Salvar progresso
-            saveProgress(day, chapter);
-        }
-
-        // Salvar progresso
-        function saveProgress(day, chapter) {
-            const progress = {
-                day: day,
-                chapter: chapter,
-                timestamp: new Date().getTime()
-            };
-            localStorage.setItem('ebookProgress', JSON.stringify(progress));
-        }
-
-        // Carregar progresso
-        function loadProgress(day) {
-            const savedProgress = localStorage.getItem('ebookProgress');
-            if (savedProgress) {
-                const progress = JSON.parse(savedProgress);
-                if (progress.day === day) {
-                    const savedChapter = localStorage.getItem(`${day}-currentChapter`);
-                    if (savedChapter) {
-                        // Ativar o capítulo salvo
-                        document.querySelectorAll(`#${day} .chapter-btn`).forEach(btn => {
-                            btn.classList.remove('active');
-                            if (btn.getAttribute('onclick').includes(savedChapter)) {
-                                btn.classList.add('active');
-                            }
-                        });
-                        document.querySelectorAll(`#${day} .chapter-content`).forEach(content => {
-                            content.style.display = 'none';
-                        });
-                        document.getElementById(`${day}-${savedChapter}`).style.display = 'block';
-                    }
-                }
-            }
         }
 
         // Finalizar curso
@@ -1591,15 +1432,6 @@
             } else {
                 showSection('introduction');
             }
-            
-            // Configurar event listeners para os botões de capítulo
-            document.querySelectorAll('.chapter-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const day = this.closest('.content-section').id;
-                    const chapter = this.getAttribute('onclick').match(/'([^']+)'/)[1];
-                    saveProgress(day, chapter);
-                });
-            });
         });
     </script>
 </body>
